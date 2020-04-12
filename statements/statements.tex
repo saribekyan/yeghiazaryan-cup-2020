@@ -1,0 +1,35 @@
+\documentclass[a4paper,12pt,noproblemids,footer]{problemset}
+
+\usepackage[export]{adjustbox}
+\usepackage{microtype}
+\usepackage{nicefrac}
+\usepackage{parskip}
+\usepackage{wrapfig}
+\usepackage{color}
+\usepackage{todonotes}
+
+\contestshortname{Sample}
+\contestname{Sample Contest}
+%\contestlogo{sample_logo.png}
+%\location{ Location, date }
+%\contestinfo{}
+\problemlanguage{.en}
+
+\newif\ifdraft
+\drafttrue
+\newcommand{\hnote}[1]{%
+	\ifdraft {\color{red}[H: #1 ]}
+	\fi
+}
+\newcommand{\enote}[1]{%
+	\ifdraft {\color{blue}[E: #1 ]}
+	\fi
+}
+
+\begin{document}
+\coverpage
+
+% problem name and number of sample tests
+\includeproblem{sum}{2}
+
+\end{document}

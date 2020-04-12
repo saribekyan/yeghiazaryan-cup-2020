@@ -1,0 +1,5 @@
+* Add ejudge format
+
+* Add an example of an interactor and checker
+
+* Add a tester tool for secondary solutions.

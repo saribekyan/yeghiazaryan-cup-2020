@@ -1,0 +1,13 @@
+*.out
+.*
+testgen
+check_[a-z]
+*tmp
+statements/*
+
+!statements/*.pdf
+!statements/*.tex
+!statements/*.cls
+
+!.gitignore
+!.gitmodules
