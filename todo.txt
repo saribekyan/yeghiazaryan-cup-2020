@@ -3,3 +3,6 @@
 * Add an example of an interactor and checker
 
 * Add a tester tool for secondary solutions.
+    - done for direct comparison
+    - todo for checker
+
