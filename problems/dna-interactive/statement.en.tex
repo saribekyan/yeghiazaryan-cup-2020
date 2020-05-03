@@ -1,0 +1,34 @@
+\problemname{Earthovirus}
+It is year 2200.
+Not only we have survived but you are the on Mars and your mission is to isolate Mars from the only virus left in the universe: the Earthovirus.
+For that you have to compare the DNA of the suspected virus and the DNA of Earthovirus.
+
+DNAs of viruses can be represented as strings composed of letters A, G, C, T.
+The complete DNA of Earthovirus is given by a string $E$ of length $n$.
+Due to the radiation, the DNAs of all other viruses in the universe are uniformly random strings of arbitrary length.\footnote{Each character of the string is one of the four possibilities, with probability $1/4$, independently from all other characters.}
+
+When the laboratory processes the DNA of the virus, it breaks in some places, creating multiple contiguous parts of the DNA.
+Furthermore, the parts that have less than $100$ characters are very small and get lost.
+So, only some disjoint substrings $X_1, X_2, \dots, X_k$ of test DNA remain, each at least $100$ characters long.
+The laboratory guarantees that in total at least $n / 2$ characters are remaining in those substrings.
+
+You can give the laboratory some DNA-string $S$, and they will quickly check whether $S$ is a substring of some $X_i$.
+You need to write a program that asks no more than such $100$ questions and determines whether the test virus is an Earthovirus or no.
+
+\subsubsection*{The interaction between your program and the laboratory.}
+This is an interactive problem.
+First, your program will need to read from the standard input the string $E$.
+After this your program needs to write in the standard output a substring $S$, to be checked by the laboratory.
+If $S$ is a substring of $X_i$ for some $i = 1, \dots, k$, then your program will get an answer ``Yes'' in the standard input, otherwise it will receive an answer ``No''.
+If at any point your program has determined the type of the virus, it has to print either ``Earthovirus'' or ``Marsovirus'', depending on which it is.
+After this, your program must stop.
+
+Remember that you can ask at most $100$ questions and do not forget to flush after each output.
+
+It is guaranteed that $1 \leq n \leq 10^5$.
+
+{
+\renewcommand{\sampleinputname}{Laboratory's feedback}
+\renewcommand{\sampleoutputname}{Your questions}
+\displaysample{../problems/dna-interactive/tests/sample1}
+}
