@@ -4,7 +4,7 @@ problemId=$1
 file=$2
 ext=${file##*.}
 if [ $ext = "cpp" ]; then
-    g++ file -o "./test-prog.out"
+    g++ $file -o "./test-prog.out"
     executable="./test-prog.out"
 elif [ $ext = "py" ]; then
     executable="python $file"

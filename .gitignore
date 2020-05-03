@@ -4,6 +4,7 @@ testgen
 check_[a-z]
 *tmp
 statements/*
+*.log
 
 !statements/*.pdf
 !statements/*.tex
