@@ -6,7 +6,7 @@ check_[a-z]
 statements/*
 *.log
 
-!statements/*.pdf
+statements/*.pdf
 !statements/*.tex
 !statements/*.cls
 
