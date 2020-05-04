@@ -1,7 +1,15 @@
 #!/bin/bash
 
-problem=$1 # the name of the problem
-sol=$2     # path to the solution
+# Tests an interactive solution.
+
+# This is for quick local testing. If the solution is
+# is wrong, *something* will go wrong, but this script
+# will not tell what went wrong.
+
+problem=$1  # the name of the problem (e.g. guess-the-number)
+sol=$2      # path to the solution    (e.g. problems/guess-the-number/sol.py) - can be cpp, out or py
+onlytest=$3 # run only this test     (e.g. problems/sum/tests/001)
+
 # we assume the interactor is interactor.cpp
 
 interactor="./$problem-interactor.out"
@@ -23,11 +31,15 @@ elif [ $ext = "py" ]; then
     solution="python $sol"
 fi
 
-TESTS=problems/$problem/tests/[0-9][0-9][0-9]
+if [ -z $onlytest ]; then # do all tests
+    TESTS=problems/$problem/tests/[0-9][0-9][0-9]
+else
+    TESTS=problems/$problem/tests/$onlytest
+fi
 echo "Starting testing $sol"
 
-pp=/tmp/interactive-problem-pipe
-rm $pp 2> /dev/null
+pp="/tmp/interactiveProblemPipe"
+rm "$pp" 2> /dev/null
 
 for f in $TESTS
 do
@@ -51,4 +63,4 @@ echo "Done; all good"
 
 rm interactor-out.txt 2> /dev/null
 rm $interactor 2> /dev/null
-rm $solution 2> /dev/null
+
