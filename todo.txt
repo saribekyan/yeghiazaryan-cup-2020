@@ -1,8 +1,9 @@
-* Add ejudge format
+* Add ejudge formating bash script
 
-* Add an example of an interactor and checker
+* Add an example of a checker
 
-* Add a tester tool for secondary solutions.
+* Add a local tester tool for solutions.
     - done for direct comparison
+    - done for interactor
     - todo for checker
 

@@ -1,8 +1,15 @@
 #!/bin/bash
 
-problem=$1 # the name of the problem
-sol=$2     # path to the solution
-onlytest=$3
+# Tests an interactive solution.
+
+# This is for quick local testing. If the solution is
+# is wrong, *something* will go wrong, but this script
+# will not tell what went wrong.
+
+problem=$1  # the name of the problem (e.g. guess-the-number)
+sol=$2      # path to the solution    (e.g. problems/guess-the-number/sol.py) - can be cpp, out or py
+onlytest=$3 # run only this test     (e.g. problems/sum/tests/001)
+
 # we assume the interactor is interactor.cpp
 
 interactor="./$problem-interactor.out"
