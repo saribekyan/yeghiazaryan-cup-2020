@@ -2,6 +2,7 @@
 
 problem=$1 # the name of the problem
 sol=$2     # path to the solution
+onlytest=$3
 # we assume the interactor is interactor.cpp
 
 interactor="./$problem-interactor.out"
@@ -23,11 +24,15 @@ elif [ $ext = "py" ]; then
     solution="python $sol"
 fi
 
-TESTS=problems/$problem/tests/[0-9][0-9][0-9]
+if [ -z $onlytest ]; then # do all tests
+    TESTS=problems/$problem/tests/[0-9][0-9][0-9]
+else
+    TESTS=problems/$problem/tests/$onlytest
+fi
 echo "Starting testing $sol"
 
-pp=/tmp/interactive-problem-pipe
-rm $pp 2> /dev/null
+pp="/tmp/interactiveProblemPipe"
+rm "$pp" 2> /dev/null
 
 for f in $TESTS
 do
@@ -51,4 +56,4 @@ echo "Done; all good"
 
 rm interactor-out.txt 2> /dev/null
 rm $interactor 2> /dev/null
-rm $solution 2> /dev/null
+
