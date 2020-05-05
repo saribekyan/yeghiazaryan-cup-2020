@@ -15,16 +15,10 @@
 %\contestinfo{}
 \problemlanguage{.en}
 
-\newif\ifdraft
-\drafttrue
-\newcommand{\hnote}[1]{%
-	\ifdraft {\color{red}[H: #1 ]}
-	\fi
-}
-\newcommand{\enote}[1]{%
-	\ifdraft {\color{blue}[E: #1 ]}
-	\fi
-}
+\newcommand{\etodo}[1]{\todo[color=yellow]{#1}}
+\newcommand{\etodoi}[1]{\todo[inline,color=yellow]{#1}}
+\newcommand{\htodo}[1]{\todo[color=orange]{#1}}
+\newcommand{\htodoi}[1]{\todo[inline,color=orange]{#1}}
 
 \begin{document}
 \coverpage
