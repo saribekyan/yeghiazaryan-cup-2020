@@ -33,8 +33,10 @@ def print_test(n):
     curr_test += 1
 
 # sample tests
+print_test(2)
 print_test(3)
 print_test(5)
+print_test(6)
 
 while curr_test <= N_TESTS:
     n = random.randint(4, MAX_N)
