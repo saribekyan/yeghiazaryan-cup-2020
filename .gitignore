@@ -5,6 +5,7 @@ check_[a-z]
 *tmp
 statements/*
 *.log
+interactor-out.txt
 
 statements/*.pdf
 !statements/*.tex

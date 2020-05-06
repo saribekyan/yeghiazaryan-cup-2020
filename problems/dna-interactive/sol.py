@@ -21,5 +21,5 @@ for i in range(100):
         sys.stdout.flush()
         exit(0)
 
-print("Marsovirus")
+print("Randovirus")
 sys.stdout.flush()

@@ -1,19 +1,35 @@
 // info - https://codeforces.com/testlib
 
+// interactor program written using KMP
+// the runtime per query is O(|S| + |E|), which is still ok
+// because the total number of queries is up to 100 and the total
+// number of characters allowed is 10^6
+
 #include "../../testlib/testlib.h"
 #include <iostream>
 #include <string>
 #include <vector>
-#include <unordered_map>
 #include <algorithm>
 using namespace std;
 
 const int MAX_Q = 100;
 const int MAX_TOTAL_CHARS = 1000000;
 
-const long long P = 1993;
-
-const int SMALL = 16; // keep the hashes of strings up to SMALL separately
+// from http://e-maxx.ru/algo/prefix_function
+void compute_prefix_function(string& s, vector< int >& pi) {
+	int n = (int) s.length();
+    pi[0] = 0;
+	for (int i = 1; i < n; ++i) {
+		int j = pi[i - 1];
+		while (j > 0 && s[i] != s[j]) {
+			j = pi[j - 1];
+        }
+		if (s[i] == s[j]) {
+            j += 1;
+        }
+		pi[i] = j;
+	}
+}
 
 int main(int argc, char* argv[])
 {
@@ -36,56 +52,28 @@ int main(int argc, char* argv[])
     int L = 0; // the longest X
     string X = "#";
     for (int i = 0; i < nx; ++i) {
-        string x = inf.readString();
-        L = max(L, (int)x.size());
-        X += x + "#";
+        string z = inf.readString();
+        L = max(L, (int)z.size());
+        X += z + "#";
     }
     int m = X.size();
 
     string ok = "Earthovirus";
-    string wa = "Marsovirus";
+    string wa = "Randovirus";
     if (same == 0) {
         swap(ok, wa);
     }
 
-    ///////////////// Preprocess ////////////////
-    // Prepare hashes
-    vector < long long > prefix_hash(m, 0), power(m, 0);
-    prefix_hash[0] = X[0];
-    power[0] = 1;
-    for (int i = 1; i < m; ++i) {
-        prefix_hash[i] = prefix_hash[i - 1] * P + X[i];
-        power[i] = power[i - 1] * P;
-    }
+    //////////////// Preprocess //////////////////
 
-    vector< int > str_lengths;
-    for (int l = 1; l < SMALL && l <= L; ++l) {
-        str_lengths.push_back(l);
-    }
-    for (int l = SMALL; l <= L; l *= 2) {
-        str_lengths.push_back(l);
-    }
-    int n_lengths = str_lengths.size();
+    auto pi = vector< int >(L + 1 + m);
 
-    // keeps for each (length, hash) -> { set of positions which have that hash }
-    vector < unordered_map < long long , vector < int > > > len_hash_locs(n_lengths);
-
-    for (int i = 0; i < n_lengths; ++i) {
-        int l = str_lengths[i];
-        for (int p = 1; p + l < m; ++p) {
-            int q = p + l - 1;
-            long long h = prefix_hash[q] - prefix_hash[p - 1] * power[l];
-            len_hash_locs[i][h].push_back(p);
-
-            // cerr << l << ' ' << p << ' ' << h << '\n';
-        }
-    }
-
-    // cerr << 65 * P + 65 << '\n';
-    // cerr << len_hash_locs[0].begin()->first << ' ' << len_hash_locs[0].begin()->second[0] << '\n';
-    // cerr << len_hash_locs[1].begin()->first << ' ' << len_hash_locs[1].begin()->second[0] << '\n';
-
-    //////////////// End preprocess //////////////
+    // test
+    // compute_prefix_function(E, pi);
+    // for (int i = 0; i < E.size(); ++i) {
+    //     cerr << pi[i] << ' ';
+    // }
+    // cerr << endl;
 
     //////////////// Start interaction ///////////
 
@@ -96,6 +84,9 @@ int main(int argc, char* argv[])
 
     while (true) {
         string S = ouf.readString();
+        int len_s = S.size();
+
+        // check if found answer
         if (S == ok) {
             tout << "ok" << endl;
             quitf(_ok, "ok");
@@ -104,20 +95,21 @@ int main(int argc, char* argv[])
             quitf(_wa, "wa");
         }
 
+        // check number of queries
         nq += 1;
         if (nq > MAX_Q) {
             tout << "Too many queries" << endl;
             quitf(_wa, "Too many queries");
         }
 
-        int len_s = S.size();
-
+        // check total number of characters
         total_chars += len_s;
         if (total_chars > MAX_TOTAL_CHARS) {
             tout << "Too many characters";
             quitf(_wa, "Too many characters");
         }
 
+        // check the alphabet in the query
         for (char c : S) {
             if (c != 'A' && c != 'G' && c != 'C' && c != 'T') {
                 tout << "Bad character: " << c;
@@ -131,36 +123,13 @@ int main(int argc, char* argv[])
             continue;
         }
 
-        int i = 0;
-        while (i < n_lengths && str_lengths[i] <= len_s) {
-            i++;
-        }
-        i -= 1;
-        int l = str_lengths[i];
-        long long hash_beg = 0, hash_end = 0;
-        for (int j = 0; j < l; ++j) {
-            hash_beg = hash_beg * P + S[j];
-            hash_end = hash_end * P + S[len_s - l + j];
-        }
-
         bool found = false;
-        if (len_hash_locs[i].find(hash_beg) != len_hash_locs[i].end()) {
-            for (int p : len_hash_locs[i][hash_beg]) {
-                int q = p + len_s - 1;
-                if (hash_end == prefix_hash[q] - prefix_hash[q - l] * power[l]) {
-                    // all hashes match, let's just verify to make sure
-                    bool almost_found = true;
-                    for (int u = 0; u < len_s; ++u) {
-                        if (S[u] != X[p + u]) {
-                            almost_found = false;
-                            break;
-                        }
-                    }
-                    if (almost_found) {
-                        found = true;
-                        break;
-                    }
-                }
+        S = S + "|" + X;
+        compute_prefix_function(S, pi);
+        for (int i = 2 * len_s; i < len_s + 1 + m; ++i) {
+            if (pi[i] >= len_s) {
+                found = true;
+                break;
             }
         }
 
@@ -169,7 +138,6 @@ int main(int argc, char* argv[])
         } else {
             cout << "No" << endl << flush;
         }
-        tout << "Query went through hash" << endl;
     }
 
     // just message

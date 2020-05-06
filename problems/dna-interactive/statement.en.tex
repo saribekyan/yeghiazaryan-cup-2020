@@ -31,20 +31,19 @@ You are not allowed to ask more than $100$ questions, and the total number of ch
 All your questions must be strings representing a valid DNA.
 
 \paragraph{Sample executions.}
-In the samples it is assumed that no substring of $X$ is lost, no matter how small, i.e., $Z_1, \dots, Z_k$ represent a complete partition of $X$.
+In the samples it is assumed that no substring of $X$ is lost\htodo{maybe we say that substrings of 1 character are lost?}, no matter how small, i.e., $Z_1, \dots, Z_k$ represent a \emph{complete} partition of $X$.
 This is done to save space in the presentation.
-Recall, that in the actual execution $Z_i$ have at least $100$ characters and do not necessarily partition $X$.
+Recall, that in the actual execution, the strings $Z_i$ have at least $100$ characters each and do not necessarily cover all of $X$.
 
 The samples are only for demonstration of the interaction of your program and the judge's, they are created manually.
 \htodoi{The samples have spaces for readability, but they should not be in the actual program later. What should we do: (1) skip them here; (2) make sure the interactor would work even with them; (3) explain that they are there for readability}
-\htodoi{In the samples ask at least one long question}
 {
 \renewcommand{\sampleinputname}{Laboratory's feedback}
 \renewcommand{\sampleoutputname}{Your questions}
 \displaysample{../problems/dna-interactive/tests/sample1}
 }
 \emph{Explanation of the sample 1:}
-In this case, $X$ is equal to $E$ and it is broken into substrings $Z_1 = \texttt{AGATAC}$ and $Z_2 = \texttt{ATAGTCA}$.
+In this case, $X$ is equal to $E$ and it is broken into substrings $Z_1 = \texttt{AGATACATA}$ and $Z_2 = \texttt{GACA}$.
 
 {
 \renewcommand{\sampleinputname}{Laboratory's feedback}

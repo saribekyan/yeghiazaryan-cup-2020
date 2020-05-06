@@ -21,6 +21,6 @@ int main() {
             return 0;
         }
     }
-    cout << "Marsovirus" << endl << flush;
+    cout << "Randovirus" << endl << flush;
     return 0;
 }
