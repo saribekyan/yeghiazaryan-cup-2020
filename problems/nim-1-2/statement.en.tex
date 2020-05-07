@@ -1,6 +1,31 @@
-\problemname{todo}
-Story: you had a party with the jury, and need to take glasses to the kitchen. You can only take 1 or 2 glasses at a time. Whever takes the last one has to wash all of it. The jury has written a program to beat you. Write a program to beat jury. Jury picks the number first, but to give you a chance to win it's always a winning number.
+\problemname{Drinking Party}
+After a big party, there are $n$ dirty glasses in the living room that your friend Alice and the Jury need to take to the kitchen.
+Since the glasses are fragile, both of them can only take one in each hand.
+So on each trip from the living room, they can take either one or two glasses.
+Also, the door is small so they alternate: first Alice takes some glasses, then the Jury, then Alice again and so on until they are done.
 
-Perhaps you want to practice with your teammate first.
+The person who takes the last glass to the kitchen will have to wash them.
+Clearly, neither Alice nor the Jury want to wash the glasses.
+The Jury has written a program to determine whether he should take one or two glasses at each point to avoid washing the glasses, if possible.
+Your task is to write a program to help Alice to determine her strategy for not taking the last glass.
 
-\htodoi{Check what happens if the program does not quit after seeing $n = 1$, but waits for a new input from the interactor.}
+\paragraph{The interaction between your program and Jury's program.}
+This is an interactive problem, where your program will interact with the Jury's program according to the following protocol.\htodo{bullet points?}
+
+First, your program must read from the standard input the number of glasses $n$ (the Jury has counted them for you).
+After this, your program must write in the standard output the number of glasses Alice should take to the kitchen (either $1$ or $2$).
+If only one glass is remaining, your program must finish as Alice won.
+Otherwise, your program must read the number of glasses the Jury takes on their turn (again, either $1$ or $2$).\htodo{maybe the Jury should output the new number of glasses, so the code is even shorter? Or both of them just pass the number of glasses, instead of 1, 2.}
+Then, the process repeats as it is again Alice's turn to take glasses.
+
+Do not forget to flush after each output.
+
+\paragraph{Limits.}
+It is guaranteed that $1 \leq n \leq 10^4$.
+It is also guaranteed that $n$ is such that Alice always has a chance to force the Jury to take the the last glass.
+{
+\renewcommand{\sampleinputname}{Jury's output}
+\renewcommand{\sampleoutputname}{Your output}
+\displaysample{../problems/nim-1-2/tests/sample1}
+}
+\htodoi{same question as in the other interactive problem about whitespaces.}
