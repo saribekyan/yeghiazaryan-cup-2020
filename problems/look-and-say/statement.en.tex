@@ -1,0 +1,37 @@
+\problemname{Look-and-Say numbers}
+
+The mathematician John H. Conway (26 December 1937 – 11 April 2020) was famous for many games he invented.
+One of those games is Look-and-Say, which is a one-player game that generates a sequence of numbers, starting from $1$.
+Each subsequent number is constructed from the previous one using a simple look-and-say rule:
+Split the previous number into groups of consecutive equal digits, then read off the groups by saying the number of digits in each group and then the digit itself.
+%Read off the digits of the previous member, counting the number of digits in groups of the same digit, and writing the number down as you read it.
+It is easier to understand the rule by examples:
+\begin{itemize}
+    \item $1$ is read off as ``one $1$'' or $11$;
+    \item $2223344$ is read off as ``three $2$s, two $3$s, two $4$s'' or $322324$;
+    \item $1111332$ is read off as ``four $1$s, two $3$s, one $2$'' or $412312$.
+\end{itemize}
+
+Thus, the first numbers of the sequence are
+\[
+    1, 11, 21, 1211, 111221, ...
+\]
+Your task is to find $k$th number in the sequence.
+
+\section*{Input}
+The only line of the input contains one integer $n$ ($1 \leq n \leq 16)$.
+\section*{Output}
+The only line of the output must contain the $n$th number in the Look-and-Say sequence.
+
+{
+\renewcommand{\sampleinputname}{Sample input}
+\renewcommand{\sampleoutputname}{Sample output}
+\displaysample{../problems/look-and-say/tests/001}
+\displaysample{../problems/look-and-say/tests/004}
+\displaysample{../problems/look-and-say/tests/005}
+}
+
+%The first number of the sequence is $1$, and each subsequent number is constructed from the previous one using a simple look-and-say rule.
+%The rule is easiest to explain by applying it to the number $1113322221122$.
+%We group equal and consecutive integers together: $111-33-2222-11-22$, and then create the next number by writing 
+%}

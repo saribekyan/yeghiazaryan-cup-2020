@@ -7,3 +7,6 @@
     - done for interactor
     - todo for checker
 
+* The checker/gen/test scripts have a lot of common code,
+  e.g. compiling cpp files, rewrite them
+

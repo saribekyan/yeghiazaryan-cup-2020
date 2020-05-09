@@ -4,31 +4,50 @@
 
 # This is for quick local testing, it will not ignore whitespace characters etc.
 
-problemId=$1    # e.g. sum
+problem=$1      # e.g. sum
 file=$2         # solution file (can be cpp, py or out)
+onlytest=$3     # run only this test     (e.g. problems/sum/tests/001)
 
 ext=${file##*.}
 if [ $ext = "cpp" ]; then
-    g++ $file -o "./test-prog.out"
-    executable="./test-prog.out"
+    solution="./$problem-sol.out"
+    g++ $file -o "$solution"
+
+    if [ $? -eq 0 ]; then
+        echo "Successfully compiled the solution"
+    else
+        echo "Could not compile the solution $file"
+        exit 1;
+    fi
 elif [ $ext = "py" ]; then
-    executable="python $file"
+    solution="python $file"
 elif [ $ext = "out" ]; then
-    executable=$file
+    solution=$file
 fi
 
-TESTS=problems/$problemId/tests/[0-9][0-9][0-9]
-echo "Checking: $executable"
+TESTS=problems/$problem/tests/[0-9][0-9][0-9]
+if [ -z $onlytest ]; then # do all tests
+    TESTS=problems/$problem/tests/[0-9][0-9][0-9]
+else
+    TESTS=problems/$problem/tests/$onlytest
+fi
+
+echo "Starting testing $sol"
+echo "Executable: $solution"
+echo ""
+
 for f in $TESTS
 do
     echo "Testing $f"
-    $executable < $f > curr.a
-    if cmp -s curr.a "$f"; then
+    $solution < $f > curr.a
+    cmp -s curr.a "$f.a"
+    if [ $? -eq 0 ]; then
+        echo "ok"
+    else
         echo "Test $f failed, see curr.a for output."
         exit 1
     fi
 done
 
 rm ./curr.a 2> /dev/null
-rm ./test-prog.out 2> /dev/null
-
+rm "./$problem-sol.out" 2> /dev/null

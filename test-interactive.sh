@@ -27,6 +27,14 @@ elif [ $ext = "cpp" ]; then
     echo "Compiling $sol"
     solution="./$problem-sol.out"
     g++ $sol -o $solution
+
+    if [ $? -eq 0 ]; then
+        echo "Successfully compiled the solution"
+    else
+        echo "Could not compile the solution $sol"
+        exit 1;
+    fi
+
 elif [ $ext = "py" ]; then
     solution="python $sol"
 fi
@@ -63,4 +71,3 @@ echo "Done; all good"
 
 rm interactor-out.txt 2> /dev/null
 rm $interactor 2> /dev/null
-
