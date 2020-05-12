@@ -1,6 +1,7 @@
 \problemname{Roman Road}
+% Author: Hayk Saribekyan
 
-The towns of Cowford and Wentbridge are connected by an old Roman road.
+The towns of Cowford and Wentbridge are connected by an old one-way Roman road.
 The roads that Romans built were very straight, so we will represent the road between Cowford and Wentbridge as the $x$-axis, where Cowford is at coordinate $0$ and Wentbridge is at coordinate $L$.
 
 The Roman roads were not designed for cars, so some cars cannot pass one another.
@@ -18,12 +19,16 @@ As the administrator for the Roman roads, your goal is to determine the order in
 \section*{Input}
 The first line of the input contains three integers: $n$ ($1 \leq n \leq 10^5$), the number of Cowford residents; $L (1 \leq L \leq 10^9)$ the length of the Roman road in meters; $W (1 \leq W \leq 10^7)$ the width of the roads in microns.
 
-Line $i$ of the input after that contains three integers: $t_i (0 \leq t_i \leq 10^9)$, the time resident $i$ left Cowford; $s_i (1 \leq s_i \leq 10^9)$, the speed at which that resident travels in meters per second; $w_i$ ($1 \leq w_i \leq W)$, the width of the $i$th resident's car.
+Line $i$ of the input after that contains three integers: $t_i (0 \leq t_i \leq 10^9)$\htodo{given the time or the initial coordinates}, the time resident $i$ left Cowford; $s_i (1 \leq s_i \leq 10^9)$, the speed at which that resident travels in meters per second; $w_i$ ($1 \leq w_i \leq W)$, the width of the $i$th resident's car.
 
 \section*{Output}
 \htodoi{What is the output? Three options: (1) a permutation of $n$ integers, the order the cars arrive; (2) the time when each one arrives; (3) the time when the last one arrives.
 
 (1) is not unique so, (1.1) If a is stuck behind b, they are at the same location, but b always arrive before a; (1.2) Return in lexicographic order; (1.3) arbitrary order - need a checker.
 
-I like (1.1) most, but maybe explaining is hard?
+I like (1.1) most but still not unique and maybe explaining is hard? Also the code is a bit more tricky maybe.
+
+Maybe (1.1) + lexicographic, so we do not need a checker?
+
+Actually doesn't lexicographics => (1.1)?
 }
