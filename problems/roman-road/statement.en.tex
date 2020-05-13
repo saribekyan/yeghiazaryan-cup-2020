@@ -2,24 +2,29 @@
 % Author: Hayk Saribekyan
 
 The towns of Cowford and Wentbridge are connected by an old one-way Roman road.
-The roads that Romans built were very straight, so we will represent the road between Cowford and Wentbridge as the $x$-axis, where Cowford is at coordinate $0$ and Wentbridge is at coordinate $L$.
+The roads that Romans built are very straight, so we will represent the road between Cowford and Wentbridge as a straight line of length $L$ meters.
+%the $x$-axis, where Cowford is at coordinate $0$ and Wentbridge is at coordinate $L$.
 
 The Roman roads were not designed for cars, so some cars cannot pass one another.
-In particular, if a faster car of width $w_F$ approaches a slower car of width $w_S$, then the faster car can only overtake if $w_F + w_S \leq W$.
-Otherwise, the faster car is stuck behind the slower one and the two cars have to drive at the same speed.
+In particular, if a faster car of width $w_F$ approaches a slower car of width $w_S$, then the faster car can only overtake if $w_F + w_S \leq W$,
+where $W$ is the width of the road.
+Otherwise, the faster car is stuck behind the slower one and the two cars have to drive at the same (slower) speed.
 \htodo{do we need to say that cars are points?}
 \htodo{maybe we could give the cars lengths too?}
 
 On the weekend, the $n$ residents of Cowford go to Wentbridge in their cars.
 Resident $i$ leaves Cowford at time $t_i$, and moves at speed $s_i$ meters per second towards Wendbridge, along the Roman road.
-Additionally, the width of the car of resident $i$ is $w_i$.
+Additionally, the width of the car of resident $i$ is $w_i$ microns.
 
 As the administrator for the Roman roads, your goal is to determine the order in which the residents of Cowford arrive to Wentbridge.
 
 \section*{Input}
 The first line of the input contains three integers: $n$ ($1 \leq n \leq 10^5$), the number of Cowford residents; $L (1 \leq L \leq 10^9)$ the length of the Roman road in meters; $W (1 \leq W \leq 10^7)$ the width of the roads in microns.
 
-Line $i$ of the input after that contains three integers: $t_i (0 \leq t_i \leq 10^9)$\htodo{given the time or the initial coordinates}, the time resident $i$ left Cowford; $s_i (1 \leq s_i \leq 10^9)$, the speed at which that resident travels in meters per second; $w_i$ ($1 \leq w_i \leq W)$, the width of the $i$th resident's car.
+Line $i$ of the input after that contains three integers:
+$t_i (0 \leq t_i \leq 10^9)$\htodo{given the time or the initial coordinates}, the time resident $i$ left Cowford;
+$s_i (1 \leq s_i \leq 10^9)$, the speed at which that resident travels in meters per second;
+$w_i$ ($1 \leq w_i \leq W)$, the width of the $i$th resident's car in microns.
 
 \section*{Output}
 \htodoi{What is the output? Three options: (1) a permutation of $n$ integers, the order the cars arrive; (2) the time when each one arrives; (3) the time when the last one arrives.
