@@ -1,13 +1,28 @@
 \problemname{Buildings}
 
-Construction in Yerevan is in full swing. Every day you can face to a new building in some part of a city. But it's hard to guess where the new building will be constructed. In order to find the places of the new buildings Eduard did some research and found an interesting pattern.
+%Eduard has just become the chief architect of a booming city, where there is a lot of demand for construction, but he decided to impose a law about where new buildings can be constructed.
+%All the roads in the city are already built, and can be represented by a two dimensional infinite grid, with horizontal and vertical roads at every integer coordinate.
+%This divides the 
 
-Let's assume that Yerevan is a rectangular grid and each building can be constructed in the vertices of the grid. There are already built $K$ buildings. According to the Eduard's pattern in order to find the location of the next building you must find three buildings (grid vertices) which are vertices of some rectangle with sides parallel to coordinate axis such that the fourth vertex of the rectangle doesn't contain a building. In this case the next building will be constructed in the fourth vertex of a rectangle. After that construction of the next buildings will satisfy the same pattern.
+There is a lot of construction going on in Yerevan.
+But it is hard to guess where these new building will be constructed.
+In order to find the locations of the new buildings Eduard did some research and found an interesting pattern.
 
-Of course this process will stop at some point when there won't be any rectangle satisfying the above condition. Eduard asks you to write a program which calculates the number of buildings at the end, i.e. when no more buildings can be constructed.
+Let us represent Yerevan as a two dimensional rectangular grid, where buildings can be constructed only at integer-coordinated locations.
+No two buildings can occupy the same location.
+According to Eduard's pattern, if three buildings stand at the corners of some rectangle with sides parallel to the coordinate axes, then a building will be constructed at the fourth location, if it is empty.
+The rule will then be repeated using the newly built buildings too, until no more buildings can be built.
+
+When Eduard did his research, there were already $K$ buildings built.
+He now asks you to write a program which calculates the number of buildings that will eventually be standing in Yerevan.
+
+%According to Eduard's pattern in order to find the location of the next building you must find three buildings (grid vertices) which are vertices of some rectangle with sides parallel to coordinate axis such that the fourth vertex of the rectangle doesn't contain a building. In this case the next building will be constructed in the fourth vertex of a rectangle. After that construction of the next buildings will satisfy the same pattern.
+
+%Of course this process will stop at some point when there won't be any rectangle satisfying the above condition. Eduard asks you to write a program which calculates the number of buildings at the end, i.e. when no more buildings can be constructed.
 
 \section*{Input}
-The first line contains an integer $K (0 \leq K \leq 2*10^5)$. The next $K$ lines contain two integers each — coordinates of building $X_i$ and $Y_i (−10^9 \leq X_i, Y_i \leq 10^9)$.
+The first line contains an integer $K (0 \leq K \leq 2 \cdot 10^5)$.
+The next $K$ lines contain two integers each — coordinates of building $X_i$ and $Y_i (−10^9 \leq X_i, Y_i \leq 10^9)$ of the $i$th building.
 
 \section*{Output}
-Output the number of the buildings in Yerevan at the end.
+Output the number of buildings in Yerevan at the end of all construction.
