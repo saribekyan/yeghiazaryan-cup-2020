@@ -1,12 +1,18 @@
 \problemname{Statistics}
+\htodoi{I would like to add some little trick in this problem... :) }
+Eduard loves to look at statistics and during the COVID-19 pandemic he monitors its development.
+He thinks that one of the most important metrics is the maximum number of daily new cases of the virus during last $K$ days.
+For example, if $K = 3$ and the number of daily new cases in the first seven days of the pandemic is given by the array
+$D = [7, 5, 80, 40, 3, 2, 97]$,
+then Eduard will create a new array
+$M = [7, 7, 80, 80, 80, 40, 97]$ where $M[i]$ shows the highest number of new cases for the days $i, i - 1, i - 2$.\htodo{what's the example for?}
 
-Eduard loves statistics and during pandemic he monitors daily new cases and other related statistics. He thinks that one of the important metrics is the maximum number of daily new cases during last $K$ days. For example if statistics of daily cases for one week is given in array $A = [7, 5, 80, 40, 3, 2, 97]$ and $K=3$ then he will create new array $B = [7, 7, 80, 80, 80, 40, 97]$ where $B[i]$ shows the highest number of cases for the days $i, i - 1, i - 2$.
-
-Eduard asks you to write a program which will help him to create new array $B$ from the given array $A$ and number $K$.
+Eduard asks you to write a program which will help him to create the array $M$ from the given array $D$ and number $K$.
 
 \section*{Input}
-The first line of the input contains two integer $N (1 \leq N \leq 10^5)$ number of elements in array $A$ and $K (1 \leq K \leq N)$.
-Second line contains $N$ space-separated integers $A_i (1 \leq A_i \leq 10^9)$.
+The first line of the input contains two integers
+$N (1 \leq N \leq 10^5)$, the number of days from the first reported case of the virus, and $K (1 \leq K \leq N)$.
+Second line contains $N$ space-separated integers, the elements of the array  $D$; the maximum number of daily reported cases is $10^9$.
 
 \section*{Output}
-The only line of the output must contain $N$ numbers - values of array $B$.
+The only line of the output must contain $N$ numbers -- values of array $M$.
