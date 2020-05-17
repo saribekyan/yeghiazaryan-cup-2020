@@ -158,7 +158,7 @@ def convert_problem(problems_base, problem, ejudge, letter):
             dst_file = path.join(checkers_dir, dest_fname)
             shutil.copy(src_file, dst_file)
 
-            print("Do you want me to build %s.cpp ? y/n" % (dest_fname))
+            print("Do you want me to build %s ? y/n" % (dest_fname))
             if sys.stdin.readline()[0] == 'y':
                 out_fname = dest_fname.split('.')[0]
                 out_path = path.join(dest_dir, out_fname)
@@ -183,6 +183,20 @@ if __name__ == '__main__':
         problems_to_convert = get_problems_from_tex(args.texfile)
     else:
         problems_to_convert = [ (args.problem_name, args.letter) ]
+    
+    print("I will convert:")
+    for (problem, letter) in problems_to_convert:
+        print("  %s -> %s" % (problem, letter))
+    print()
+    print("Destination contest: %s" % (args.ejudge))
+    print()
+    print("  expecting extension \"%s\" for input  -> \"%s\"" % (src_in, dst_in))
+    print("  expecting extension \"%s\" for output -> \"%s\"" % (src_out, dst_out))
+
+    print("OK? y/n")
+    if sys.stdin.readline()[0] != 'y':
+        print("quitting...")
+        exit(1)
 
     n_warnings = 0
     for problem, letter in problems_to_convert:
