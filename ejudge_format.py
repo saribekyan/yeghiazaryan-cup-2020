@@ -125,9 +125,16 @@ def convert_problem(problems_base, problem, ejudge, letter):
         except:
             pass
     
+    n_warnings = 0
+
     print("  %d test files moved" % n_moved)
     if n_moved % 2 != 0:
         print("  WARNING - odd number of test files")
+        n_warnings += 1
+    if n_moved < 10:
+        print("  WARNING - only %d tests?" % (n_moved))
+        n_warnings += 1
+    print()
 
     checkers_dir = path.join(ejudge, 'checkers')
     if not path.isdir(checkers_dir):
@@ -154,6 +161,8 @@ def convert_problem(problems_base, problem, ejudge, letter):
     print("Done problem %s -> %s" % (problem, letter))
     print()
 
+    return n_warnings
+
 if __name__ == '__main__':
     args = parse_args()
 
@@ -162,8 +171,12 @@ if __name__ == '__main__':
     else:
         problems_to_convert = [ (args.problem_name, args.letter) ]
 
+    n_warnings = 0
     for problem, letter in problems_to_convert:
-        convert_problem(
+        n_warnings += convert_problem(
             args.problems_base, problem,
             args.ejudge,
             letter)
+
+    if n_warnings > 0:
+        print("There were %d WARNINGS above" % n_warnings)
