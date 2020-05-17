@@ -1,3 +1,5 @@
+#define EJUDGE
+
 #include <string>
 #include <iostream>
 #include "../../testlib/testlib.h"

@@ -1,5 +1,7 @@
 // info - https://codeforces.com/testlib
 
+#define EJUDGE
+
 #include "../../testlib/testlib.h"
 #include <iostream>
 using namespace std;

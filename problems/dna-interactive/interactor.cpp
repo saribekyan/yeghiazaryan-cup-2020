@@ -5,6 +5,8 @@
 // because the total number of queries is up to 100 and the total
 // number of characters allowed is 10^6
 
+#define EJUDGE
+
 #include "../../testlib/testlib.h"
 #include <iostream>
 #include <string>
