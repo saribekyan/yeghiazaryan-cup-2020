@@ -158,6 +158,19 @@ def convert_problem(problems_base, problem, ejudge, letter):
             dst_file = path.join(checkers_dir, dest_fname)
             shutil.copy(src_file, dst_file)
 
+            print("Do you want me to build %s.cpp ? y/n" % (dest_fname))
+            if sys.stdin.readline()[0] == 'y':
+                out_fname = dest_fname.split('.')[0]
+                out_path = path.join(dest_dir, out_fname)
+                cmd = "g++ %s -O3 -o %s" % (src_file, out_path)
+
+                print("  Running cmd: %s" % cmd)
+                res = os.system(cmd)
+                if res != 0:
+                    print("    The result was non zero: %d, go figure it out.. contiuing..." % res)
+                    n_warnings += 1
+                print()
+
     print("Done problem %s -> %s" % (problem, letter))
     print()
 
