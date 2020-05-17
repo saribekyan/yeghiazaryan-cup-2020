@@ -251,8 +251,9 @@
   \def\@problemid{#1}
 }
 
-\newcommand{\problemname}[1]{
-  \def\@problemname{#1}
+\newcommand{\problemname}[2][]{
+  \def\@problemname{#2}
+  \def\@problemtype{#1}
   \problemheader{\@problemname}{\@problemid}
 }
 
@@ -283,26 +284,11 @@
         \\[5mm]
       }
     \end{minipage}
-    \hfill
-    \IfFileExists{#2/problem_statement/artwork.jpg}{
-      \begin{minipage}{0.5\textwidth}
-        \begin{flushright}
-          \includegraphics[height=4cm,valign=t]{#2/problem_statement/artwork.jpg}
-        \end{flushright}
-      \end{minipage}
-    }{
-     \IfFileExists{#2/problem_statement/artwork.png}{
-      \begin{minipage}{0.5\textwidth}
-        \begin{flushright}
-          \includegraphics[height=4cm,valign=t]{#2/problem_statement/artwork.png}
-        \end{flushright}
-      \end{minipage}
-    }{}}
   \end{minipage}
   \addtocontents{toc}{
     \if@problemnumbers \problemcircle{\problemnumber} \fi
     % \if@problemnumbers \textbf{\problemnumber} \fi
-    & \@problemname \\}%
+    & \@problemname & \hspace{4em} \@problemtype \\}%
 }
 
 %% Commands related to sample data
@@ -422,7 +408,7 @@
   \pagestyle{problem}
 
   % Set up table of contents for cover page
-  \addtocontents{toc}{\protect\begin{tabular}{cl}}
+  \addtocontents{toc}{\protect\begin{tabular}{cll}}
 }
 
 \AtEndDocument{
