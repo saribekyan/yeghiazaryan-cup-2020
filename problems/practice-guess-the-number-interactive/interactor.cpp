@@ -30,9 +30,9 @@ int main(int argc, char* argv[])
     int nq = 0;
     while (true) {
         int x = ouf.readInt(1, n);
-        if (x < h) {
+        if (h < x) {
             cout << -1 << endl << flush;
-        } else if (x > h) {
+        } else if (h > x) {
             cout << 1 << endl << flush;
         } else {
             cout << 0 << endl << flush;

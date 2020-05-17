@@ -14,7 +14,7 @@ int main() {
         if (res == 0) {
             return 0;
         }
-        if (res < 0) {
+        if (res > 0) {
             a = m + 1;
         } else {
             b = m;

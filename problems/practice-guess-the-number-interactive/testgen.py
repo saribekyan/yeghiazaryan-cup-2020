@@ -1,5 +1,6 @@
-N_TESTS   = 10
+N_TESTS   = 20
 MAX_N   = 10 ** 6
+MAX_Q   = 100
 
 import os
 import random
@@ -35,6 +36,11 @@ def print_test(n, h):
 # sample tests
 print_test(5, 4)
 print_test(10, 6)
+
+print_test(MAX_N, 1)
+print_test(MAX_N, MAX_N)
+print_test(MAX_N, 2 * MAX_Q)
+print_test(MAX_N, MAX_N - 2 * MAX_Q)
 
 while curr_test <= N_TESTS:
     n = random.randint(1, MAX_N)
