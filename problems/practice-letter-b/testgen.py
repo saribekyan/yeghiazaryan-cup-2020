@@ -35,6 +35,9 @@ letters = string.ascii_lowercase
 print_test("abracadabra")
 print_test("abbazabba")
 
+print_test("b" * MAX_LEN)
+print_test("a" * MAX_LEN)
+
 while curr_test <= N_TESTS:
     n = random.randint(1, MAX_LEN)
     s = ''.join(random.choice(letters) for i in range(n))
