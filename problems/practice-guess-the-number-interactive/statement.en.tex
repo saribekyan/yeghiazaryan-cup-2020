@@ -1,6 +1,6 @@
-\problemname{Guess the Number}
+\problemname{Guess the Number -- Interactive}
 This is an interactive problem.
-Your program will interact with the one written by jury using the standard input and output.
+Your program will interact with the one written by the jury using the standard input and output.
 
 The jury’s program is given a hidden integer $h$ between $1$ and $n$ ($1 \leq n \leq 10^6$).
 The goal of your program is to guess $h$ in at most $100$ attempts.
@@ -15,15 +15,19 @@ You may get one of the following inputs:
 \begin{itemize}
     \item $-1$ -- this means that $x < h$;
     \item $1$ -- this means that $x > h$;
-    \item $0$ -- this means that the hidden number of your guess are equal.
+    \item $0$ -- this means that the hidden number and your guess are equal.
 \end{itemize}
+When your program finds the hidden number, it must quit its execution.
+Do not forget to flush after each output (see the last page for more details about interactive problems).
 
 \paragraph{Limits.}
 The number $n$ is between $1$ and $10^6$, and your program must find the answer in at most $100$ attempts.
 
+\emph{Note, in the examples below, the empty lines are only for presentation.
+Your program must not produce them.}
 {
 \renewcommand{\sampleinputname}{Jury's feedback}
 \renewcommand{\sampleoutputname}{Your attempts}
-\displaysample{../problems/guess-the-number/tests/sample1}
-\displaysample{../problems/guess-the-number/tests/sample2}
+\displaysample{../problems/practice-guess-the-number-interactive/tests/sample1}
+\displaysample{../problems/practice-guess-the-number-interactive/tests/sample2}
 }

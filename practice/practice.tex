@@ -1,0 +1,36 @@
+\documentclass[a4paper,12pt,noproblemids,footer]{problemset}
+
+\usepackage[export]{adjustbox}
+\usepackage{microtype}
+\usepackage{nicefrac}
+\usepackage{parskip}
+\usepackage{wrapfig}
+\usepackage{color}
+\usepackage[textsize=tiny]{todonotes}
+
+\contestshortname{Yeghiazaryan Cup 2020 -- Practice Round}
+\contestname{Yeghiazaryan Cup 2020 \\ \large Practice Round}
+%\contestlogo{sample_logo.png}
+\location{ May 18 - May 24, 2020 }
+%\contestinfo{}
+\problemlanguage{.en}
+
+\newcommand{\etodo}[1]{\todo[color=yellow]{#1}}
+\newcommand{\etodoi}[1]{\todo[inline,color=yellow]{#1}}
+\newcommand{\htodo}[1]{\todo[color=orange]{#1}}
+\newcommand{\htodoi}[1]{\todo[inline,color=orange]{#1}}
+
+\DeclareUnicodeCharacter{2212}{-}
+
+\begin{document}
+\coverpage
+
+% problem name and number of sample tests
+\includeproblem{practice-sum}{2}
+\includeproblem{practice-guess-the-number-interactive}{0}
+\includeproblem{practice-happy-easter-output-only}{0}
+
+\newpage
+\input{interactive-info}
+
+\end{document}

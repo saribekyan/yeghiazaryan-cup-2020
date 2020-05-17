@@ -5,11 +5,15 @@ check_[a-z]
 *tmp
 statements/*
 *.log
+*.aux
 interactor-out.txt
 
-statements/*.pdf
+statements/*
+practice/*
 !statements/*.tex
 !statements/*.cls
+!practice/*.tex
+!practice/*.cls
 
 !.gitignore
 !.gitmodules

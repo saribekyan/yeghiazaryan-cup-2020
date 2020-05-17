@@ -1,0 +1,24 @@
+\paragraph{General remarks about interactive problems.}
+\begin{itemize}
+    \item You must print a new line after each interaction;
+    \item You must flush the output stream after each interaction:
+    \begin{itemize}
+        \item In C or C++: \texttt{fflush(stdout);}
+        \item In Java: \texttt{System.out.flush();}
+        \item In Python: \texttt{sys.stdout.flush()}
+        \item In C\#: \texttt{Console.Out.Flush();}
+    \end{itemize}
+    \item Typical issues with interactive problems are
+    \begin{itemize}
+        \item Wrong Answer -- usually means that your program followed the interaction protocol but the answer or the intermediate steps are wrong.
+        
+        \item Presentation Error -- usually means that your program did not follow the interaction protocol correctly and the jury’s interacting protocol is not able to test it.
+        Note that this may happen if your output does not satisfy the required upper/lower limits of numbers.
+        
+        \item Wall Time Limit Exceeded -- this means that your program is not following the protocol in such a way that the interaction is not progressing.
+        This can happen if your program is expecting an input from the jury’s program by mistake; or if your program has not provided the necessary output for the jury’s program to respond.
+        The latter can happen if you do not flush the output stream.
+        
+        \item Runtime error -- usually a mistake in your program that makes your program crash during the execution.
+    \end{itemize}
+\end{itemize}
