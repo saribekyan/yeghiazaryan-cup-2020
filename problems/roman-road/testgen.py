@@ -1,8 +1,17 @@
-N_TESTS   = 10
-MAX_A   = 10 ** 9
+N_TESTS   = 20
+FIRST_TEST = 5
+
+MAX_N = 10 ** 5
+MAX_L = 10 ** 9
+MAX_W = 10 ** 7
+
+MAX_ti = 10 ** 9
+MAX_si = 10 ** 9
+
 
 import os
 import random
+import numpy as np
 
 random.seed(0)
 
@@ -13,26 +22,45 @@ test_dir    = os.path.join(dir_path, 'tests')
 if not os.path.exists(test_dir):
     os.mkdir(test_dir)
 
-curr_test = 1
-def print_test(a, b):
+curr_test = FIRST_TEST
+
+def print_test(L, W, t, s, w):
     global curr_test
 
     assert(curr_test <= N_TESTS)
-    assert(-MAX_A <= a <= MAX_A)
-    assert(-MAX_A <= b <= MAX_A)
+
+    N = len(t)
+
+    assert(len(s) == N and len(w) == N)
+    assert(1 <= N <= MAX_N)
+    assert(1 <= L <= MAX_L)
+    assert(1 <= W <= MAX_W)
+
+    assert((0 <= t).all() and (t <= MAX_ti).all())
+    assert((1 <= s).all() and (s <= MAX_si).all())
+    assert((1 <= w).all() and (w <= W).all())
 
     print('printing test %d' % curr_test)
     fname = os.path.join(test_dir, '%03d' % curr_test)
     with open(fname, 'w') as f:
-        f.write('%d %d\n' % (a, b))
+        f.write('%d %d %d\n' % (N, L, W))
+        data = np.array([t, s, w]).transpose()
+        np.savetxt(f, data, fmt='%d')
 
     curr_test += 1
 
-# sample tests
-print_test(2, 2)
-print_test(1, 4)
+def rand_test(N):
+    W = random.randint(1, MAX_W)
+    L = random.randint(1, MAX_L)
+    wi = np.random.randint(1, W, N)
+    ti = np.random.randint(0, MAX_ti, N)
+    si = np.random.randint(0, MAX_si, N)
+
+    return (L, W, ti, si, wi)
 
 while curr_test <= N_TESTS:
-    a = random.randint(-MAX_A, MAX_A)
-    b = random.randint(-MAX_A, MAX_A)
-    print_test(a, b)
+    if curr_test <= N_TESTS - 5:
+        N = random.randint(1, MAX_N)
+    else:
+        N = MAX_N
+    print_test(*rand_test(N))

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Generates output given the solution
+
 problem=$1  # the name of the problem (e.g. sum)
 sol=$2      # path to the solution    (e.g. problems/sum/sol.py) - can be cpp, out or py;
             # if empty, the script will find some sol.py/sol.cpp and compile it.
@@ -33,6 +35,11 @@ elif [ $ext = "cpp" ]; then # cpp solution, need to compile
 
 elif [ $ext = "py" ]; then # py file
     solution="python $sol"
+elif [ $ext = $sol ]; then # maybe there is no extension on the solution file
+    solution=$sol
+else
+    echo "Can't figure out extension of $sol"
+    exit 1
 fi
 
 TESTS=problems/$problem/tests/[0-9][0-9][0-9]
