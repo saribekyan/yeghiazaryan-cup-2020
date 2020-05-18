@@ -1,0 +1,22 @@
+\problemname[stdin/stdout]{Modelling Viruses}
+You have been asked to write a program to model the spread of a virus in a population.
+As an excellent programmer, you have split the task into simple sub-tasks.
+The goal of your current sub-task is to determine whether two people are at most $2$ meters apart during the given time interval.
+
+Let's call the two people in the sub-task Alice and Bob.
+You represent them as points moving in the two dimensional space.
+Alice starts her movement at location $(x_A, y_A)$, and moves with a constant velocity that is given by a vector $(h_A, v_A)$ (in meters/second), during the $T$ seconds of the day.
+You have the same information for Bob given by vectors $(x_B, y_B)$ and $(h_B, v_B)$.
+
+Your program should determine the first time Alice and Bob are at most $2$ meters apart during the first $T$ seconds of their movement, if that happens at all.
+\section*{Input}
+The first line of the input contains a single integer $T (1 \leq T \leq 10^5)$, the length of the time interval of interest.
+The second line contains the information about Alice, space-separated integers $x_A, y_A, h_A, v_A$, which are all at most $10^5$ in absolute value.
+%$x_A, y_A$ are in meters, while $h_A, v_A$ are in meters per second.
+The third line contains the information about Bob, in the same format and satisfying the same conditions.
+
+\section*{Output}
+The only line of the input should have the first time, in seconds, when Alice and Bob are at most $2$ meters apart during the $T$ seconds of their movements.
+If this does not happen, simply output $-1$.
+Your output should have $5$ digits after the decimal point.
+\htodoi{A different option for this problem: Alice and Bob's movement is given by $K$ line segments (bekyal). And they move at a constant velocity. Do they meet ? }
