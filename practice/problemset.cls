@@ -67,8 +67,8 @@
 \licenseblurb{}
 \problemlanguage{}
 \contestinfo{
-      Time limit for all problems: 1 seconds\footnote{Unless otherwise specified in the problem.} \\ % hacky
-      Memory limit for all problems: 256MB \\ % hacky
+      Time limit for all problems: 2 seconds\footnote{Unless otherwise specified in the problem.} \\ % hacky
+      Memory limit for all problems: 128MB \\ % hacky
       \vspace{15pt}
       \Large\sf
       Problems are not ordered by difficulty.\\
