@@ -55,7 +55,7 @@ for test in range(start_t, end_t + 1):
                 e = (img[1:-1, 1:-1] == 0) & (img[1+i:n-1+i, 1+j:m-1+j] == 255)
                 edges = edges | e
 
-    cv.imwrite('test.png', np.array(edges, dtype='uint8') * 255)
+    cv.imwrite('debug1.png', np.array(edges, dtype='uint8') * 255)
     
     found = False
     for si in range(n - 2):
@@ -70,7 +70,7 @@ for test in range(start_t, end_t + 1):
     # clean up around it
     bfs(edges, si, sj, True)
 
-    cv.imwrite('test2.png', np.array(edges, dtype='uint8') * 255)
+    cv.imwrite('debug2.png', np.array(edges, dtype='uint8') * 255)
 
     # find a new starting point
     found = False
@@ -91,7 +91,7 @@ for test in range(start_t, end_t + 1):
     for p in res:
         a[p[0], p[1]] = 255
     a[res[0][0], res[0][1]] = 128
-    cv.imwrite('test3.png', a)
+    cv.imwrite('debug3.png', a)
 
     res.append(res[0])
     res.append(res[1])
@@ -123,4 +123,5 @@ for test in range(start_t, end_t + 1):
             c += 1
     print(c)
     print()
+    
     resf.write('%d\n' % c)
