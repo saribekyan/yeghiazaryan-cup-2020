@@ -1,7 +1,6 @@
 \problemname[interactive]{Guess the Number}
 This is an interactive problem.
 Your program will interact with the one written by the jury using the standard input and output.
-
 The jury’s program is given a hidden integer $h$ between $1$ and $n$ ($1 \leq n \leq 10^6$).
 The goal of your program is to guess $h$ in at most $100$ attempts.
 You make attempts and the jury's program replies whether your guess is larger, smaller or equal to the given number.
@@ -17,8 +16,9 @@ You may get one of the following inputs:
     \item $1$ -- this means that $h > x$, i.e., the hidden number is larger;
     \item $0$ -- this means that the hidden number and your guess are equal.
 \end{itemize}
-When your program finds the hidden number, it must quit its execution.
-Do not forget to flush after each output (see the last page for more details about interactive problems).
+When your program finds the hidden number or receives EOF (end-of-file) signal, it must quit its execution.
+Do not forget to flush after each output.
+See the last page for more details about interactive problems.
 
 \paragraph{Limits.}
 The number $n$ is between $1$ and $10^6$, and your program must find the answer in at most $100$ attempts.
