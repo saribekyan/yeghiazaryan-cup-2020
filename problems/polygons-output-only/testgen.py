@@ -17,8 +17,8 @@ MAX_SIDES = 20
 MIN_DIM = 64
 MAX_DIM = 2048
 
-MIN_SIDE_X_WIDTH = 10
-MAX_SIDE_LEN = 200
+MIN_SIDE_X_WIDTH = 100
+MAX_SIDE_LEN = 300
 
 MIN_ANGLE = 10 / 180.0 * np.pi
 MAX_ANGLE = 170 / 180.0 * np.pi
@@ -37,6 +37,8 @@ test_dir    = os.path.join(dir_path, 'tests')
 if not os.path.exists(test_dir):
     os.mkdir(test_dir)
 
+all_in_one = open(os.path.join(test_dir, 'correct.a'), 'w')
+
 curr_test = 1
 def print_test(sides, img):
     global curr_test
@@ -54,6 +56,8 @@ def print_test(sides, img):
     cv.imwrite(fname, img)
     with open(out_fname, 'w') as f:
         f.write('%d\n' % sides)
+
+    all_in_one.fwrite('%d\n' % sides)
 
     curr_test += 1
 
@@ -166,7 +170,7 @@ if __name__ == '__main__':
     for i in range(N_TESTS):
         mean_sides = random.randint(3, 10)
 
-        width = random.randint(1, 50)
+        width = random.randint(1, 30)
         width = min(width, MAX_SIDE_LEN // MIN_SIDE_X_WIDTH)
 
         print_test(*rand_test(mean_sides, width))
