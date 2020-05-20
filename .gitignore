@@ -7,6 +7,9 @@ statements/*
 *.log
 *.aux
 interactor-out.txt
+*debug*
+sol
+wrong
 
 statements/*
 practice/*

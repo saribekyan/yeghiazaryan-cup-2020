@@ -19,9 +19,13 @@ int main() {
         s.insert(a[i]);
         b.push_back(-*s.begin());
     }
-    for (auto x: b) {
-        cout << x << " ";
+    for (int i = 0; i < n; ++i) {
+        cout << b[i];
+        if (i + 1 < n) {
+            cout << ' ';
+        } else {
+            cout << endl;
+        }
     }
-    cout << endl;
     return 0;
 }
