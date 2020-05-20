@@ -1,22 +1,36 @@
 \problemname[stdin/stdout]{Modelling Viruses}
+\htodo{Eduard, check the statement}
 You have been asked to write a program to model the spread of a virus in a population.
 As an excellent programmer, you have split the task into simple sub-tasks.
-The goal of your current sub-task is to determine whether two people are at most $2$ meters apart during the given time interval.
+In your current sub-task you model the movement of two people, Alice and Bob.
+Your goal is to determine if they violate the social-distancing rules, and if so, when.
+\htodoi{alternative: Your goal is to determine if they have a chance of infecting one another, and if so, when.}
+%Your goal is to determine if the distance between Alice and Bob is $2$ meters or less, during an interval of $T$ seconds.
 
-Let's call the two people in the sub-task Alice and Bob.
-You represent them as points moving in the two dimensional space.
-Alice starts her movement at location $(x_A, y_A)$, and moves with a constant velocity that is given by a vector $(h_A, v_A)$ (in meters/second), during the $T$ seconds of the day.
-You have the same information for Bob given by vectors $(x_B, y_B)$ and $(h_B, v_B)$.
+Alice and Bob are represented as points moving in the two dimensional space.
+Alice starts her movement at point $A$ at time $0$ and
+moves with a constant velocity given by a vector $v_A$.
+You have the same information about Bob.
+%, given by the point $B$ and velocity vector $v_B$.
+Both Alice and Bob move for exactly $T$ seconds, and then stop.
 
-Your program should determine the first time Alice and Bob are at most $2$ meters apart during the first $T$ seconds of their movement, if that happens at all.
+%Alice and Bob have a chance to infect one another if their distance becomes $2$ metres or less.
+%Write a program that finds the earliest time when they have a determines if Alice and Bob are ever $2$ meters or less away from one another.\htodo{have a look at the new statement).
+Alice and Bob violate the social-distancing rule if their distance is $2$ metres or less.
+Write a program that determines the earliest time when they violate the rule, if they ever do.
+
 \section*{Input}
 The first line of the input contains a single integer $T (1 \leq T \leq 10^5)$, the length of the time interval of interest.
-The second line contains the information about Alice, space-separated integers $x_A, y_A, h_A, v_A$, which are all at most $10^5$ in absolute value.
-%$x_A, y_A$ are in meters, while $h_A, v_A$ are in meters per second.
+The second line contains the information about Alice, four space-separated integers $x, y, v_x, v_y$,  which are all at most $10^5$ in absolute value.
+The starting position of Alice is $A = (x, y)$ and her velocity is given by the vector $v_A = (v_x, v_y)$.
 The third line contains the information about Bob, in the same format and satisfying the same conditions.
+All the values are in standard units, i.e., metres and seconds.
 
 \section*{Output}
-The only line of the input should have the first time, in seconds, when Alice and Bob are at most $2$ meters apart during the $T$ seconds of their movements.
-If this does not happen, simply output $-1$.
-Your output should have $5$ digits after the decimal point.
-\htodoi{A different option for this problem: Alice and Bob's movement is given by $K$ line segments (bekyal). And they move at a constant velocity. Do they meet ? }
+The only line of the input should have the first time, in seconds,
+when Alice and Bob are violating the social-distancing rule.
+If this never happens, simply output $-1$.
+%when Alice and Bob are at most $2$ meters apart during the $T$ seconds of their movements.
+%If this does not happen, simply output $-1$.
+%Your output should have $5$ digits after the decimal point.
+%\htodoi{A different option for this problem: Alice and Bob's movement is given by $K$ line segments (bekyal). And they move at a constant velocity. Do they meet ? }
