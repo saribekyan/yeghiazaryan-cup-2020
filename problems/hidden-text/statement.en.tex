@@ -1,32 +1,28 @@
 \problemname{Hidden text}
 It's spring of 2020.
-The active life of Yerevan is stopped and everyone is locked down in their apartments.
-It's boring for everyone, and especially for Hayk and Bell. 
-To have some fun they decided to play a game.
+The active life of Yerevan has stopped.
+Everyone is bored, especially Hayk and Bell, so they decided to play a game.
 
-Game rules are pretty simple.
-Hayk has one \href{http://ejudge.rau.am/ejudge/hayktable.html}{big table} of letters. And during each round he thinks up a word, which Bell should find out. As a hint he gives (row,column) pairs of each letter in his table to Bel.
-Rows and columns are numbered from 1.
+The game is simple: Bell thinks of a word $W$, and Hayk has to guess $W$.
+To give Hayk some chance, Bell has given Hayk a \href{http://ejudge.rau.am/ejudge/hayktable.html}{big table} of letters.
+As a hint, for each letter of $W$, Bell tells Hayk a location in the table where that letter appears.
+The location is given as a (row, column) pair, with indexing starting from $1$.
 
-E.g. If row column numbers are
+For example, if the Bell gives Hayk the following locations:
+\begin{center}
+    (3, 3), (4, 4), (2, 3)
+\end{center}
+then Bell's hidden word is ``dur''.
 
-(4, 4); (4, 1); (2, 4)
-
-
-Then Hayk's word is "dur".
-You can see in the given html table that 4th element of 4th row is 'd', first element of 4th row is 'u' and 4th element of the second row is 'r'.
-
-Hayk always uses the same table and at first Bel was reconstructing words quite fast.
-But during 2492th round Hayk asked him to find 8 letter word, which he wasn't able to do.
-And now Bel asks for your help.
-
-Please reconstruct the hidden word that is described by the following (row, column) pairs.
-
-(17, 32); (23, 50); (29, 59); (35, 64); (42, 77); (48, 86); (56, 92); (62, 100)
+After winning 2491 rounds of this game, Hayk needs your help to win the last 2492th round.
+The hint from Bell for this round is
+\begin{center}
+    (17, 32), (23, 50), (29, 59), (35, 64), (42, 77), (48, 86), (56, 92), (62, 100).
+\end{center}
 
 \section*{Input}
 There is no input for this problem, except for the link above.
 Here is an \href{http://167.71.248.201/ejudge/hayktable.html}{alternative link} to the page.
 
 \section*{Output}
-You should simply upload or paste the hidden word in the online judge. 
+You should simply upload or paste Bell's hidden word in the online judge, on a single line.
