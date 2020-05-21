@@ -52,12 +52,12 @@ int main() {
 
     long long r = 2;
 
+    if (x * x + y * y <= 2 * 2) {
+        printf("%.6lf\n", 0.0);
+        return 0;
+    }
     if (vx == 0 && vy == 0) {
-        if (x * x + y * y <= 2 * 2) {
-            printf("%.5lf\n", 0.0);
-        } else {
-            printf("-1\n");
-        }
+        printf("-1\n");
         return 0;
     }
 
@@ -75,18 +75,34 @@ int main() {
         printf("-1\n");
         return 0;
     }
-    fprintf(stderr, "%.5lf %.5lf\n", xf, yf);
 
-    double speed = norm2(vx, vy);
+    double t1 = T + 1, t2 = T + 1;
+    if (vx != 0) {
+        t1 = (xf - x) / vx;
+    } else {
+        t1 = (yf - y) / vy;
+    }
+    fprintf(stderr, "%.5lf %.5lf: %.5lf\n", xf, yf, t1);
 
-    double t = norm2(xf - x, yf - y) / speed;
     if (count == 2) {
-        fprintf(stderr, "%.5lf %.5lf\n", xs, ys);
-        t = min( t, norm2(xs - x, ys - y) / speed );
+        if (vx != 0) {
+            t2 = (xs - x) / vx;
+        } else {
+            t2 = (ys - y) / vy;
+        }
+        fprintf(stderr, "%.5lf %.5lf: %.5lf\n", xs, ys, t2);
     }
 
+    if (t1 <= 0) {
+        t1 = T + 1;
+    }
+    if (t2 <= 0) {
+        t2 = T + 1;
+    }
+    double t = min(t1, t2);
+
     if (t <= T + EPS) {
-        printf("%.5lf\n", t);
+        printf("%.6lf\n", t);
     } else {
         printf("-1\n");
     }

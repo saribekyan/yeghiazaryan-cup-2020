@@ -3,6 +3,8 @@
 #include <algorithm>
 using namespace std;
 
+const double EPS = 1e-8;
+
 int main() {
     long long T;
     long long ax, ay, avx, avy;
@@ -19,23 +21,14 @@ int main() {
 
     long long r = 2;
 
-    if (vx == 0 && vy == 0) {
-        if (x * x + y * y <= 2 * 2) {
-            printf("0\n");
-        } else {
-            printf("-1\n");
-        }
-        return 0;
-    }
-
-    double step = 1e-5 / 2;
+    double step = 1e-4;
 
     double sx = x;
     double sy = y;
     double t = 0.0;
-    while (t <= T) {
-        if (sx * sx + sy * sy <= r * r) {
-            printf("%.5lf\n", t);
+    while (t <= T + EPS) {
+        if (sx * sx + sy * sy <= r * r + EPS) {
+            printf("%.4lf\n", t);
             return 0;
         }
         sx += step * vx;
