@@ -8,7 +8,7 @@
 using namespace std;
 
 int main() {
-    const int tableSize = 255;
+    const int tableSize = 100;
     const string hiddenText = "hayastan";
     int index = 0;
     vector <pair <int, int> > ans;
@@ -20,7 +20,7 @@ int main() {
         out << "<tr>";
         for (int j = 0; j < tableSize; ++j) {
             char c = (char)('a' + rand() % 26);
-            if (index < hiddenText.size() && c == hiddenText[index] && i > 50 && j > 50 && (ans.empty() || (ans.back().first < i - 15 && ans.back().second < j - 7))) {
+            if (index < hiddenText.size() && c == hiddenText[index] && i > 15 && j > 10 && (ans.empty() || (ans.back().first < i - 5 && ans.back().second < j - 3))) {
                 ans.push_back(make_pair(i, j));
                 ++index;
             }
@@ -30,5 +30,5 @@ int main() {
     }
     out << "</table>";
     for (auto x: ans)
-        cout << x.first << " " << x.second << endl;
+        cout << "(" << x.first + 1 << ", " << x.second + 1 << "); ";
 }
