@@ -268,6 +268,7 @@
   }}
 
 \newcommand{\problemheader}[2]{
+  \hypertarget{\@problemid}{}
   \begin{minipage}{\textwidth}
     \begin{minipage}{1.0\textwidth}
       \textsf{
@@ -288,7 +289,7 @@
   \addtocontents{toc}{
     \if@problemnumbers \problemcircle{\problemnumber} \fi
     % \if@problemnumbers \textbf{\problemnumber} \fi
-    & \@problemname & \hspace{4em} \@problemtype \\}%
+    & \protect\hyperlink{\@problemid}{\@problemname} & \hspace{4em} \@problemtype \\}%
 }
 
 %% Commands related to sample data
