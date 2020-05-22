@@ -1,5 +1,7 @@
 start_t = 1
-end_t = 100
+end_t = 3000
+
+DEBUG = False
 
 resf = open('result.txt', 'w')
 
@@ -55,7 +57,8 @@ for test in range(start_t, end_t + 1):
                 e = (img[1:-1, 1:-1] == 0) & (img[1+i:n-1+i, 1+j:m-1+j] == 255)
                 edges = edges | e
 
-    cv.imwrite('debug1.png', np.array(edges, dtype='uint8') * 255)
+    if DEBUG:
+        cv.imwrite('debug1.png', np.array(edges, dtype='uint8') * 255)
     
     found = False
     for si in range(n - 2):
@@ -70,7 +73,8 @@ for test in range(start_t, end_t + 1):
     # clean up around it
     bfs(edges, si, sj, True)
 
-    cv.imwrite('debug2.png', np.array(edges, dtype='uint8') * 255)
+    if DEBUG:
+        cv.imwrite('debug2.png', np.array(edges, dtype='uint8') * 255)
 
     # find a new starting point
     found = False
@@ -84,14 +88,20 @@ for test in range(start_t, end_t + 1):
         if found:
             break
 
-    print(si, sj)
+    # print(si, sj)
+
     res = bfs(edges, si, sj, False)
 
-    a = np.zeros(edges.shape, dtype='uint8')
-    for p in res:
-        a[p[0], p[1]] = 255
-    a[res[0][0], res[0][1]] = 128
-    cv.imwrite('debug3.png', a)
+    if DEBUG:
+
+        a = np.zeros(edges.shape, dtype='uint8')
+        for p in res:
+            a[p[0], p[1]] = 255
+        a[res[0][0], res[0][1]] = 100
+        a[res[1][0], res[1][1]] = 170
+        cv.imwrite('debug3.png', a)
+
+    res = res[1:]
 
     res.append(res[0])
     res.append(res[1])
@@ -100,11 +110,9 @@ for test in range(start_t, end_t + 1):
     aligned = [ ]
     for i in range(n_seg - 2):
         angle = get_angle(res[i + 1], res[i], res[i + 2])
-        print(angle / np.pi * 180.0)
+        if DEBUG:
+            print(i, angle / np.pi * 180.0)
         aligned.append(angle <= THRESHOLD)
-
-    print(res[1:10])
-    print(aligned)
 
     shift = 0
     while aligned[0]:
@@ -113,15 +121,19 @@ for test in range(start_t, end_t + 1):
     while not aligned[0]:
         aligned.append(aligned.pop(0))
         shift += 1
-    print(shift)
-    print(aligned)
+
+    if DEBUG:
+        print(shift)
+        print(aligned)
+
 
     assert(aligned[0]) # it should start aligned
     c = 0
     for i in range(1, len(aligned)):
         if (not aligned[i]) and aligned[i - 1]:
             c += 1
-    print(c)
-    print()
     
-    resf.write('%d\n' % c)
+    resf.write('%d ' % c)
+    if DEBUG:
+        print(c)
+        print()

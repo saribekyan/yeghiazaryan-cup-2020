@@ -24,7 +24,10 @@ After this, until your program finds the answer, it needs to write in the standa
 If $S$ is a substring of $Z_i$ for some $i = 1, \dots, k$, then your program will get an answer ``Yes'' in the standard input, otherwise it will receive an answer ``No''.
 If at any point your program has determined the type of the virus, it has to print either ``Earthovirus'' or ``Randovirus'', depending on which it is.
 After this, your program must stop.
-Finally, do not forget to flush after each output.
+
+When your program determines the answer or receives EOF (end-of-file) signal, it must quit its execution.
+Do not forget to flush after each output.
+See the last page for more details about interactive problems.
 
 \paragraph{Limits.}
 It is guaranteed that $1 \leq n \leq 10^5$.
