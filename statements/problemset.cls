@@ -47,7 +47,8 @@
 \RequirePackage{url}              % Urls
 \RequirePackage[normalem]{ulem}   % \sout
 \RequirePackage{tikz}             % Circles
-\RequirePackage[colorlinks=true,implicit=false]{hyperref}
+\RequirePackage[colorlinks=true,implicit=false,linkcolor=cyan,urlcolor=cyan]{hyperref}
+
 \ifplastex\else
 \RequirePackage{pgffor}
 \fi

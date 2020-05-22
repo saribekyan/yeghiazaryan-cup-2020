@@ -5,17 +5,13 @@ As an excellent programmer, you have split the task into simple sub-tasks.
 In your current sub-task you model the movement of two people, Alice and Bob.
 Your goal is to determine if they violate the social-distancing rules, and if so, when.
 \htodoi{alternative: Your goal is to determine if they have a chance of infecting one another, and if so, when.}
-%Your goal is to determine if the distance between Alice and Bob is $2$ meters or less, during an interval of $T$ seconds.
 
 Alice and Bob are represented as points moving in the two dimensional space.
 Alice starts her movement at point $A$ at time $0$ and
 moves with a constant velocity given by a vector $v_A$.
 You have the same information about Bob.
-%, given by the point $B$ and velocity vector $v_B$.
 Both Alice and Bob move for exactly $T$ seconds, and then stop.
 
-%Alice and Bob have a chance to infect one another if their distance becomes $2$ metres or less.
-%Write a program that finds the earliest time when they have a determines if Alice and Bob are ever $2$ meters or less away from one another.\htodo{have a look at the new statement).
 Alice and Bob violate the social-distancing rule if their distance is $2$ metres or less.
 Write a program that determines the earliest time when they violate the rule, if they ever do.
 
@@ -31,8 +27,4 @@ All the values are in standard units, i.e., metres and seconds.
 The only line of the input should have the first time, in seconds,
 when Alice and Bob are violating the social-distancing rule.
 If this never happens, simply output $-1$.
-Your output should have $5$ digits after the decimal point.
-%when Alice and Bob are at most $2$ meters apart during the $T$ seconds of their movements.
-%If this does not happen, simply output $-1$.
-%Your output should have $5$ digits after the decimal point.
-%\htodoi{A different option for this problem: Alice and Bob's movement is given by $K$ line segments (bekyal). And they move at a constant velocity. Do they meet ? }
+Your output should have at least $5$ digits after the decimal point.
