@@ -1,24 +1,35 @@
 \problemname[output-only]{Virus shapes}
----------- alternative problem
+Your are an expert virologist and over the past decades have discovered many interesting facts about viruses.
+Your first discovery was that all the viruses look like a convex polygons.
+Later you discovered that the internal angles of all viruses (polygons) are between 10 and 170 degrees, because otherwise they cannot live.
 
-All viruses are convex.
-A virus is dangerous if it has an acute angle (< 90 degrees).
-You have to print a 0-1 array if a virus is dangerous or no.
-If the angle is 80-100 degrees, both 0 and 1 are OK, otherwise it must be precise.
+Your new theory is that the number of corners of the virus (polygon) determines how dangerous the virus is.
+To test this hypothesis, you developed a microscope that can take images of any virus.
+The result is an image that shows only the ``shell'' or the ``boundary'' of the virus, which is enough to determine the number of its corners.
+Additionally, your genius microscope has such a high resolution that the sides of all the viruses (polygons) has at least $120$ pixels in the image.
 
-\htodoi{Note, that now we do not need to write that all angles are at most 170 degrees.}
-\htodoi{Does this make the solution easier?}
+Your assistant has collected a database of images of $3000$ viruses.\htodo{link}
+To test your theory, your first task is to find the number of corners of each of the $3000$ viruses.
 
----------------
-As an expert virologist you have developed a microscope that can take high-resolution images of viruses.
-The result is an image that shows only the ``shell'' or the ``boundary'' of the virus.
-It is known that the shell of every virus has a shape of a convex polygon, but
-it also has some thickness.
+\section*{Input}
+There is no input for this problem, except for the link above.
+Here is an alternative link to the page.\htodo{link}
 
-You have collected a database of images of 3000 viruses.\htodo{link}
-Since the most important feature of a virus is the number of cor
+\section*{Output}
+You should simply upload or paste a comma-separated list containing the number of corners of each virus in the online judge, on a single line, without spaces.
+For example, below is a (wrong) answer with in the correct format:
+\begin{center}
+    \texttt{5,3,7}
+\end{center}
 
-
-You have been studying viruses for some time and have created a
-database containing high-resolution images of 3000 viruses.\htodo{link}
-It is known that the viruses look like convex polygons
+%---------- alternative problem
+%
+%All viruses are convex.
+%A virus is dangerous if it has an acute angle (< 90 degrees).
+%You have to print a 0-1 array if a virus is dangerous or no.
+%If the angle is 80-100 degrees, both 0 and 1 are OK, otherwise it must be precise.
+%
+%\htodoi{Note, that now we do not need to write that all angles are at most 170 degrees.}
+%\htodoi{Does this make the solution easier?}
+%
+%---------------
