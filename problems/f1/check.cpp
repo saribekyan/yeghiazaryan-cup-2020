@@ -7,7 +7,7 @@
 using namespace std;
 
 const int N = 463;
-const int error = 10;
+const int error = 15;
 
 bool is_ok(string a, string b) {
     for (int i = 0; i + 2 < a.size(); ++i) {
