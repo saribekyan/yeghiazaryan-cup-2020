@@ -6,7 +6,7 @@
 #include "../../testlib/testlib.h"
 using namespace std;
 
-const double error = 1.0 / 100; // percent
+const double error = 1.0 / 100; // 1 percent
 
 int main(int argc, char * argv[]) {
     setName("compares outputs of numbers of corners; max error = %lf percent", error);
