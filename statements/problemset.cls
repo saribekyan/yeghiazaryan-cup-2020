@@ -149,7 +149,7 @@
     \vspace{0.5cm}
     \fi
     %
-    \Huge{\contentsname}\\
+    \Huge{\contentsname\footnote{ See \hyperlink{info-sheet}{the last page} for general information about the problems. }}\\
     \vspace{1.0cm}
     \renewcommand{\baselinestretch}{1.333333}\Large
     \@starttoc{toc}
