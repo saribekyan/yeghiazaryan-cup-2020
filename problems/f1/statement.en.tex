@@ -1,30 +1,36 @@
 \problemname[output-only]{Formula One}
-Eduard likes statistics very much.
-And he also is a Formula One fan.
-That why he decided to pull some statistics about \href{https://en.wikipedia.org/wiki/Formula_One_World_Champions}{Formula One World Championships}.
-First he prepared a list of all data requests that he needs to pull and started to pull data from Wikipedia.
-He did for the first 5 requests, but got tired after that, because it was taking too long.
+As we already know, Eduard likes to look at and collect statistics very much.
+And he also is a \href{https://en.wikipedia.org/wiki/Formula_One}{Formula One} fan.
+So he decided to collect his personal list of F1 results from different years and races.
+Eduard only cares about The Grands Prix, which is a series of races that take place across the world throughout the year.
 
-Now Eduard asks you for the help.
-You can find the list of all the requests here \href{http://ejudge.rau.am/ejudge/formula1.txt}{Formula1.txt}.
+He prepared a list of questions about the information he is missing in one file:
+\href{http://ejudge.rau.am/ejudge/formula1.txt}{formula1.txt}.
+Help him to find the answers.
+\htodoi{Question reformat: Which company was at position 4 in race 3 of 1960 F1 Grands Prix?}
+%
+%First he prepared a list of all data requests that he needs to pull and started to pull data from Wikipedia.
+%He did for the first 5 requests, but got tired after that, because it was taking too long.
+%
+%Now Eduard asks you for the help.
+%You can find the list of all the requests here \href{http://ejudge.rau.am/ejudge/formula1.txt}{Formula1.txt}.
 
 \section*{Input}
 There is no input for this problem, except for the link above.
-Here is an \href{http://167.71.248.201/ejudge/formla1.txt}{alternative link} to the page.
+Here is an \href{http://167.71.248.201/ejudge/formula1.txt}{alternative link} to the page.
+\htodo{the links do not work}
 
 \section*{Output}
 You should simply upload or paste list of companies that took the corresponding place on the given round of the give year.
-Your output should have 482 lines.
+Your output must have 482 lines.
 
-Below is a first 5 lines of the output in the correct format:
+Below are the first $5$ lines of the output in the correct format:
 \begin{center}
-    \texttt{Ferrari}
-
-    \texttt{Arrows}
-    
-    \texttt{McLaren}
-    
-    \texttt{Mercedes}
-    
-    \texttt{Tyrrell}
+    \begin{tabular}{l}
+        \texttt{Ferrari} \\
+        \texttt{Arrows} \\
+        \texttt{McLaren} \\
+        \texttt{Mercedes} \\
+        \texttt{Tyrrell}
+    \end{tabular}
 \end{center}
