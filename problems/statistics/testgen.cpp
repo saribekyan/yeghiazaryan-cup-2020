@@ -11,7 +11,7 @@
 using namespace std;
 
 const int testsCount = 0;
-const int predefinedTestsCount = 50; // these testes were already prepared without this generator
+const int predefinedTestsCount = 51; // these testes were already prepared without this generator
 
 class Test {
     private: 
@@ -59,6 +59,14 @@ class Test {
             t.a.push_back(i);
         return t;
     }
+    static Test generateSpecialTest2() {
+        Test t;
+        t.k = 80000;
+        for (int i = 100000 - 1; i >= 0; --i) {
+            t.a.push_back(i);
+        }
+        return t;
+    }
     friend ostream& operator << (ostream& oss, const Test& t) {
         oss << t.a.size() << " " << t.k << endl;
         for (int i = 0; i < t.a.size(); ++i) {
@@ -80,7 +88,7 @@ int main() {
         cout << "Generating test " << i << endl;
         tests.push_back(Test::generate(i, testsCount));
     }
-    tests.push_back(Test::generateSpecialTest());
+    tests.push_back(Test::generateSpecialTest2());
     for (int i = 0; i < tests.size(); ++i) {
         int testNumber = i + 1 + predefinedTestsCount;
         cout << "Printing test " << testNumber << " to the file" << endl;
