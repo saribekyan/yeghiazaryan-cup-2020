@@ -8,11 +8,11 @@
 using namespace std;
 
 int main() {
-    const int rows = 100000;
-    const int cols = 100000;
+    const int rows = 1000000;
+    const int cols = 500000;
     const string answer = "you_did_it.this_is_the_output.good_luck";
-    int answerRow = (int)(rows * 0.52);
-    ofstream out("tests/real000.txt");
+    int answerRow = (int)(rows * 0.22);
+    ofstream out("big.txt");
     for (int i = 0; i < rows; ++i) {
         string s(cols / 2 + rand() % (cols/2), ' ');
         if (i == answerRow) {

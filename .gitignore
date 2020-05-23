@@ -11,6 +11,7 @@ interactor-out.txt
 sol
 wrong
 simulation
+node_modules/*
 
 statements/*
 practice/*
