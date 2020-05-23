@@ -1,0 +1,20 @@
+\problemname[stdin/stdout]{Contest}
+\newcommand{\compname}{NAME}
+Hayk and Eduard like preparing programming competitions together and are now working on the problem set for \compname{} - the latest addition to the list of major programming contests in the world.\htodo{fill}
+They have exactly $T$ days until the competition.
+Hayk has created $N$ problems, and he needs to convince Eduard that his problems are good enough for \compname.
+
+To finalise the problem set, Hayk and Eduard meet once a day until the day of the competition ($T$ times in total).
+For each meeting, Hayk decides to focus only on one of his problems and 
+tries to convince Eduard to include that problem in \compname{}.
+If Eduard sees problem $i$ for the first time, he will agree to include it
+the competition with probability $p_i$.
+However, Eduard does not like repeating things, and if Hayk proposes problem $i$
+for the second time later, Eduard will agree with him with probability $f \cdot p_i$.
+In general, the probability that Eduard accepts problem $i$ on the $k$th proposal is $f^{k-1}\cdot p_i$, i.e., it decreases by factor $f$ every time problem $i$ is proposed by Hayk.\htodo{say that only for this problem, others do not decrease}
+
+Not all problems are created equal.
+Hayk has given a score $S_i$ for problem $i$, which determines how much he likes that problem.
+He wants to increase the total score $S$ of his problems at \compname{}.
+Hayk knows Eduard very well and has calculated the values $p_i$ and $f$ exactly.
+Help Hayk to compute the largest expected value of $S$ that he can have.
