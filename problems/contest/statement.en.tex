@@ -1,20 +1,32 @@
+% from NCPC 2008, Problem F - Fixing the Bugs
 \problemname[stdin/stdout]{Contest}
-\newcommand{\compname}{NAME}
-Hayk and Eduard like preparing programming competitions together and are now working on the problem set for \compname{} - the latest addition to the list of major programming contests in the world.\htodo{fill}
+Hayk and Eduard like preparing programming competitions together and are now working on the problem set for CEC -- Coronavirus End Cup, the largest programming contest in history.
 They have exactly $T$ days until the competition.
-Hayk has created $N$ problems, and he needs to convince Eduard that his problems are good enough for \compname.
+Hayk has created $N$ problems, and he needs to convince Eduard that his problems are good enough for CEC.
 
 To finalise the problem set, Hayk and Eduard meet once a day until the day of the competition ($T$ times in total).
-For each meeting, Hayk decides to focus only on one of his problems and 
-tries to convince Eduard to include that problem in \compname{}.
-If Eduard sees problem $i$ for the first time, he will agree to include it
-the competition with probability $p_i$.
-However, Eduard does not like repeating things, and if Hayk proposes problem $i$
-for the second time later, Eduard will agree with him with probability $f \cdot p_i$.
-In general, the probability that Eduard accepts problem $i$ on the $k$th proposal is $f^{k-1}\cdot p_i$, i.e., it decreases by factor $f$ every time problem $i$ is proposed by Hayk.\htodo{say that only for this problem, others do not decrease}
+For each meeting, Hayk focuses only on one of his problems and 
+tries to convince Eduard to include that problem in CEC.
+If Eduard sees problem $i$ for the first time, he will agree to include it in CEC with probability $p_i$, and reject it with probability $1 - p_i$.
+If it is rejected, Hayk can suggest the same problem on another meeting later.
+However, Eduard does not like to repeat things, and if Hayk proposes problem $i$
+for the second time, Eduard will agree with him with probability only $f \cdot p_i$.
+In general, the probability that Eduard accepts problem $i$ on its $k$th proposal is $f^{k-1}\cdot p_i$, i.e., it decreases by factor $f$ every time problem $i$ is proposed by Hayk.
+Notice that the probability decreases only for problem $i$, and stays the same for the rest.
 
 Not all problems are created equal.
-Hayk has given a score $S_i$ for problem $i$, which determines how much he likes that problem.
-He wants to increase the total score $S$ of his problems at \compname{}.
+Hayk has assigned a score $S_i$ to problem $i$, which determines how much he likes that problem.
+He wants to increase the total score $S$ of his problems at CEC.
 Hayk knows Eduard very well and has calculated the values $p_i$ and $f$ exactly.
 Help Hayk to compute the largest expected value of $S$ that he can have.
+
+\section*{Input}
+The first line of the input contains the integer $N (0 \leq N \leq 10)$, the number of Hayk's problems; the integer $T (0 \leq T \leq 100)$, the number of days until CEC; and the real number $f (0 \leq f \leq 1)$, the factor by which Eduard's mood changes.
+
+$N$ lines follow.
+The $i$th line contains the values $p_i (0 \leq p_i \leq 1)$, the probability that
+Eduard agrees problem $i$ the first time he sees it;
+and $S_i (0 \leq S_i \leq 10000)$, the score of problem $i$.
+
+\section*{Output}
+The only line of the output must contain the largest expected value of $S$, with at least $5$ digits after the decimal point.
