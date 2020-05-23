@@ -6,7 +6,7 @@
 #include "../../testlib/testlib.h"
 using namespace std;
 
-const int N = 463;
+const int N = 482;
 const int error = 10;
 
 bool is_ok(string a, string b) {

@@ -31,7 +31,6 @@ Arrows
 Red Bull
 Brabham
 Ferrari
-1 - Couldn't find for 1985 2 10
 Ferrari
 Williams
 Ferrari
@@ -71,7 +70,6 @@ Benetton
 Ferrari
 McLaren
 Ferrari
-Lola
 Red Bull
 Forti
 Honda
@@ -108,7 +106,6 @@ Lotus
 Ferrari
 Ferrari
 March
-1 - Couldn't find for 1970 10 10
 Jordan
 Red Bull
 Jordan
@@ -129,7 +126,6 @@ Honda
 Brabham
 Lotus
 BMW Sauber
-Ferrari
 Tyrrell
 Ferrari
 BAR
@@ -208,13 +204,11 @@ Sauber
 Benetton
 Ferrari
 Benetton
-1 - Couldn't find for 1977 2 10
 Ligier
 Lotus
 Toyota
 Tyrrell
 Lotus
-1 - Couldn't find for 2008 1 9
 Jordan
 Arrows
 McLaren
@@ -222,10 +216,8 @@ Alfa Romeo
 Sauber
 Arrows
 Benetton
-1 - Couldn't find for 1970 4 10
 Ligier
 Renault
-Lola
 Williams
 Toyota
 Zakspeed
@@ -311,7 +303,6 @@ McLaren
 Williams
 McLaren
 Lotus
-Arrows
 Williams
 Ferrari
 Surtees
@@ -335,7 +326,6 @@ Benetton
 Williams
 Renault
 Williams
-Copersucar
 Ferrari
 McLaren
 March
@@ -353,7 +343,6 @@ Ferrari
 Lotus
 Renault
 Sauber
-1 - Couldn't find for 1984 8 8
 Williams
 Ferrari
 Ferrari
@@ -370,7 +359,6 @@ Footwork
 McLaren
 McLaren
 March
-1 - Couldn't find for 1988 6 10
 Jordan
 Williams
 McLaren
@@ -383,7 +371,6 @@ Arrows
 McLaren
 Jaguar
 Tyrrell
-1 - Couldn't find for 1970 2 7
 Renault
 Matra
 Williams
@@ -400,7 +387,6 @@ Williams
 Minardi
 Sauber
 Ferrari
-1 - Couldn't find for 1981 6 10
 Williams
 Williams
 Lotus
@@ -409,7 +395,6 @@ March
 Williams
 AGS
 Ferrari
-1 - Couldn't find for 1989 5 10
 Williams
 McLaren
 McLaren
@@ -418,7 +403,6 @@ McLaren
 Lotus
 Minardi
 Williams
-1 - Couldn't find for 1980 1 9
 Tyrrell
 BMW Sauber
 Brabham
@@ -441,7 +425,6 @@ Tyrrell
 Toyota
 Lotus
 Benetton
-1 - Couldn't find for 1995 2 10
 Minardi
 Sauber
 Mercedes
@@ -450,14 +433,12 @@ March
 Penske
 Shadow
 Brabham
-1 - Couldn't find for 1970 2 10
 McLaren
 Red Bull
 Tyrrell
 Jordan
 McLaren
 Ferrari
-1 - Couldn't find for 1990 4 10
 Jordan
 McLaren
 Ferrari
@@ -480,3 +461,4 @@ McLaren
 Footwork
 Force India
 Ferrari
+

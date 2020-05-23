@@ -2,6 +2,7 @@
 .*
 testgen
 check_[a-z]
+check
 *tmp
 statements/*
 *.log

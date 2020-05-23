@@ -18,7 +18,7 @@ Ferrari
 Honda
 Brabham
 Renault
-Iso Marlboro
+Iso-Marlboro
 Tyrrell
 Minardi
 Dallara
@@ -31,13 +31,14 @@ Arrows
 Red Bull
 Brabham
 Ferrari
+1 - Couldn't find for 1985 2 10
 Ferrari
 Williams
 Ferrari
 Brabham
 Williams
 McLaren
-Team Lotus
+Lotus
 Ferrari
 Honda
 Williams
@@ -54,7 +55,7 @@ Arrows
 Tyrrell
 Jordan
 Arrows
-Lotus F1
+Lotus
 Williams
 Alfa Romeo
 Sauber
@@ -70,6 +71,7 @@ Benetton
 Ferrari
 McLaren
 Ferrari
+Lola
 Red Bull
 Forti
 Honda
@@ -79,15 +81,15 @@ Red Bull
 Minardi
 Ligier
 Sauber
-Team Lotus
-Embassy Hill
+Lotus
+Hill
 Brabham
 Mercedes
 Benetton
 McLaren
 Renault
 Osella
-Team Lotus
+Lotus
 Ferrari
 Ferrari
 Surtees
@@ -101,15 +103,16 @@ Minardi
 Ferrari
 Mercedes
 McLaren
-Team Lotus
-Team Lotus
+Lotus
+Lotus
 Ferrari
 Ferrari
 March
+1 - Couldn't find for 1970 10 10
 Jordan
 Red Bull
 Jordan
-Team Lotus
+Lotus
 Surtees
 Ferrari
 McLaren
@@ -124,13 +127,14 @@ Williams
 McLaren
 Honda
 Brabham
-Team Lotus
+Lotus
 BMW Sauber
+Ferrari
 Tyrrell
 Ferrari
 BAR
 Benetton
-Team Lotus
+Lotus
 Williams
 Benetton
 McLaren
@@ -138,7 +142,7 @@ Jordan
 Jaguar
 BAR
 Tyrrell
-Team Lotus
+Lotus
 Ferrari
 Benetton
 Ligier
@@ -167,7 +171,7 @@ Ferrari
 March
 Minardi
 McLaren
-Team Lotus
+Lotus
 Williams
 Williams
 McLaren
@@ -181,13 +185,13 @@ Toyota
 AGS
 Williams
 Brabham
-Team Lotus
+Lotus
 Benetton
 Williams
 McLaren
 Renault
 Sauber
-Team Lotus
+Lotus
 Ferrari
 Brabham
 BAR
@@ -204,11 +208,13 @@ Sauber
 Benetton
 Ferrari
 Benetton
+1 - Couldn't find for 1977 2 10
 Ligier
-Team Lotus
+Lotus
 Toyota
 Tyrrell
-Team Lotus
+Lotus
+1 - Couldn't find for 2008 1 9
 Jordan
 Arrows
 McLaren
@@ -216,8 +222,10 @@ Alfa Romeo
 Sauber
 Arrows
 Benetton
+1 - Couldn't find for 1970 4 10
 Ligier
 Renault
+Lola
 Williams
 Toyota
 Zakspeed
@@ -228,10 +236,10 @@ Brabham
 Lola
 BMW Sauber
 Ferrari
-Team Lotus
+Lotus
 Toyota
 Toyota
-Team Lotus
+Lotus
 Ferrari
 Toyota
 Ferrari
@@ -242,9 +250,9 @@ Mercedes
 Brabham
 Ferrari
 Williams
-Team Lotus
+Lotus
 Arrows
-Brabham-Alfa Romeo
+Brabham
 Brabham
 Ferrari
 Lola
@@ -258,7 +266,7 @@ Ferrari
 Brabham
 Benetton
 Shadow
-Lotus F1
+Lotus
 Renault
 Rial
 Ferrari
@@ -273,12 +281,12 @@ Renault
 McLaren
 Footwork
 McLaren
-Brabham-Alfa Romeo
+Brabham
 ATS
 Arrows
 McLaren
 Renault
-Iso Marlboro
+Iso-Marlboro
 Ferrari
 Matra
 Red Bull
@@ -286,14 +294,14 @@ Tyrrell
 McLaren
 March
 Ferrari
-Team Lotus
+Lotus
 Sauber
 Jordan
 McLaren
 Williams
 Rial
-Lotus-Ford
-Lotus F1
+Lotus
+Lotus
 McLaren
 McLaren
 Brabham
@@ -302,7 +310,8 @@ Jordan
 McLaren
 Williams
 McLaren
-Team Lotus
+Lotus
+Arrows
 Williams
 Ferrari
 Surtees
@@ -319,13 +328,14 @@ BAR
 McLaren
 Tyrrell
 Jordan
-March-Ford
+March
 Mercedes
 BMW Sauber
 Benetton
 Williams
 Renault
 Williams
+Copersucar
 Ferrari
 McLaren
 March
@@ -333,21 +343,22 @@ Williams
 Mercedes
 McLaren
 Lola
-Brabham-Alfa Romeo
 Brabham
-Lotus F1
+Brabham
+Lotus
 Arrows
 Williams
 Tyrrell
 Ferrari
-Team Lotus
+Lotus
 Renault
 Sauber
+1 - Couldn't find for 1984 8 8
 Williams
 Ferrari
 Ferrari
 McLaren
-Shadow-Ford
+Shadow
 Surtees
 Red Bull
 Renault
@@ -359,6 +370,7 @@ Footwork
 McLaren
 McLaren
 March
+1 - Couldn't find for 1988 6 10
 Jordan
 Williams
 McLaren
@@ -366,11 +378,12 @@ McLaren
 Alfa Romeo
 Alfa Romeo
 Sauber
-Team Lotus
+Lotus
 Arrows
 McLaren
 Jaguar
 Tyrrell
+1 - Couldn't find for 1970 2 7
 Renault
 Matra
 Williams
@@ -378,7 +391,7 @@ Williams
 Sauber
 Brabham
 Sauber
-Team Lotus
+Lotus
 Arrows
 Ferrari
 Sauber
@@ -387,22 +400,25 @@ Williams
 Minardi
 Sauber
 Ferrari
+1 - Couldn't find for 1981 6 10
 Williams
 Williams
-Lotus F1
+Lotus
 Brabham
 March
 Williams
 AGS
 Ferrari
+1 - Couldn't find for 1989 5 10
 Williams
 McLaren
 McLaren
 Renault
 McLaren
-Team Lotus
+Lotus
 Minardi
 Williams
+1 - Couldn't find for 1980 1 9
 Tyrrell
 BMW Sauber
 Brabham
@@ -410,7 +426,7 @@ McLaren
 Jordan
 McLaren
 Brabham
-Brawn
+Brawn GP
 Arrows
 Red Bull
 Ferrari
@@ -423,8 +439,9 @@ Ligier
 Sauber
 Tyrrell
 Toyota
-Team Lotus
+Lotus
 Benetton
+1 - Couldn't find for 1995 2 10
 Minardi
 Sauber
 Mercedes
@@ -432,13 +449,15 @@ Benetton
 March
 Penske
 Shadow
-Brabham-Alfa Romeo
+Brabham
+1 - Couldn't find for 1970 2 10
 McLaren
 Red Bull
 Tyrrell
 Jordan
 McLaren
 Ferrari
+1 - Couldn't find for 1990 4 10
 Jordan
 McLaren
 Ferrari
@@ -454,7 +473,7 @@ March
 Red Bull
 Benetton
 AGS
-Team Lotus
+Lotus
 Arrows
 Benetton
 McLaren

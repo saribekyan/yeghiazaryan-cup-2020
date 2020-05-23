@@ -15,12 +15,6 @@ for y, r, p in Q:
         gp_row = year_str[year_str.find("%d. " % r): ]
         gp_href = gp_row[gp_row.find("%d/" % y):]
         gp_name = gp_href[5:gp_href.find(".")]
-        # gp_ind = year_str.find("%d. " % r)
-        # gp_len = year_str[gp_ind:].find("\\")
-        # gp_name = year_str[gp_ind + 2 + len(str(r)) : gp_ind + gp_len]
-        # gp_name = gp_name.lower()
-
-        # print(y, gp_name)
 
         res_str = str(urllib.request.urlopen("https://www.statsf1.com/en/%d/%s/classement.aspx" % (y, gp_name)).read())
 
@@ -42,9 +36,6 @@ for y, r, p in Q:
         else:
             ans = ans_cut[:ans_cut.find("<")]
             print(ans)
-    except e:
-        print("2 - Couldn't find for %d %d %d" % (y, r, p))
-
-        print("sleeping")
+    except:
+        print("2 - Couldn't find for %d %d %d; sleeping" % (y, r, p))
         time.sleep(5)
-
