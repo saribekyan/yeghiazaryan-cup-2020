@@ -3,7 +3,7 @@ Eduard loves to look at statistics and during the COVID-19 pandemic he monitors 
 It has been exactly $N$ days since the first case of the virus appeared,
 and Eduard has collected the number of new cases per day in an array $D$ of length $N$.
 He thinks that one of the most important metrics is the maximum number of daily new cases of the virus during last $K$ days.
-Eduard asks you to write a program which will help him to create this very important metric in an array $M$.
+Eduard asks you to write a program which will help him to create this very important metric in a new array $M$.
 
 %For example, if $K = 3$ and the number of daily new cases in the first seven days of the pandemic is given by the array
 %$D = [7, 5, 80, 40, 3, 2, 97]$,
@@ -13,7 +13,8 @@ Eduard asks you to write a program which will help him to create this very impor
 \section*{Input}
 The first line of the input contains two integers
 $N (1 \leq N \leq 10^5)$, the number of days from the first reported case of the virus, and $K (1 \leq K \leq N)$.
-Second line contains $N$ space-separated integers, the elements of the array  $D$; the maximum number of daily reported cases is $10^9$.
+Second line contains $N$ space-separated non-negative integers, the elements of the array  $D$.
+The maximum number of daily new cases is $10^9$.
 
 \section*{Output}
 The only line of the output must contain $N$ numbers -- values of array $M$.
