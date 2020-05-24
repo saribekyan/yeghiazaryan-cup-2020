@@ -1,10 +1,8 @@
 \problemname[stdin/stdout]{Modelling viruses}
-\htodo{Eduard, check the statement}
 You have been asked to write a program to model the spread of a virus in a population.
 As an excellent programmer, you have split the task into simple sub-tasks.
 In your current sub-task you model the movement of two people, Alice and Bob.
 Your goal is to determine if they violate the social-distancing rules, and if so, when.
-\htodoi{alternative: Your goal is to determine if they have a chance of infecting one another, and if so, when.}
 
 Alice and Bob are represented as points moving in the two dimensional space.
 Alice starts her movement at point $A$ at time $0$ and
@@ -16,7 +14,6 @@ Alice and Bob violate the social-distancing rule if their distance is $2$ metres
 Write a program that determines the earliest time when they violate the rule, if they ever do.
 
 \section*{Input}
-\htodo{What samples should we include? Many different cases, or no?}
 The first line of the input contains a single integer $T (1 \leq T \leq 10^5)$, the length of the time interval of interest.
 The second line contains the information about Alice, four space-separated integers $x, y, v_x, v_y$,  which are all at most $10^5$ in absolute value.
 The starting position of Alice is $A = (x, y)$ and her velocity is given by the vector $v_A = (v_x, v_y)$.

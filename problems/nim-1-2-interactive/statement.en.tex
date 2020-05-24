@@ -4,18 +4,18 @@ Since the glasses are fragile, both of them can only take one in each hand.
 So on each trip from the living room, they can take either one or two glasses.
 Also, the door is small so they alternate: first Alice takes some glasses, then the Jury, then Alice again and so on until they are done.
 
-The person who takes the last glass to the kitchen will have to wash them.
+The person who takes the last glass to the kitchen will have to wash all the glasses.
 Clearly, neither Alice nor the Jury want to wash the glasses.
 The Jury has written a program to determine whether he should take one or two glasses at each point to avoid washing the glasses, if possible.
 Your task is to write a program to help Alice to determine her strategy for not taking the last glass.
 
 \paragraph{The interaction between your program and Jury's program.}
-This is an interactive problem, where your program will interact with the Jury's program according to the following protocol.\htodo{bullet points?}
+This is an interactive problem, where your program will interact with the Jury's program according to the following protocol.
 
-First, your program must read from the standard input the number of glasses $n$ (the Jury has counted them for you).
-After this, your program must write in the standard output the number of glasses Alice should take to the kitchen (either $1$ or $2$).
+First, your program must read from the standard input the total number of glasses $N$ (the Jury has counted them for you).
+After this, your program must write in the standard output the number of glasses Alice should take to the kitchen (either $1$ or $2$) when she makes the first trip.
 If only one glass is remaining, your program must finish as Alice won.
-Otherwise, your program must read the number of glasses the Jury takes on their turn (again, either $1$ or $2$).\htodo{maybe the Jury should output the new number of glasses, so the code is even shorter? Or both of them just pass the number of glasses, instead of 1, 2.}
+Otherwise, your program must read the number of glasses the Jury takes on their turn (again, either $1$ or $2$).
 Then, the process repeats as it is again Alice's turn to take glasses.
 
 When your program makes its last move or receives EOF (end-of-file) signal, it must quit its execution.
@@ -23,7 +23,7 @@ Do not forget to flush after each output.
 See \hyperlink{info-interactive}{the last page} for more details about interactive problems.
 
 \paragraph{Limits.}
-It is guaranteed that $1 \leq n \leq 10^4$.
+It is guaranteed that $1 \leq N \leq 10^4$.
 It is also guaranteed that $n$ is such that Alice always has a chance to force the Jury to take the the last glass.
 
 \emph{Note, in the examples below, the empty lines are only for presentation.
