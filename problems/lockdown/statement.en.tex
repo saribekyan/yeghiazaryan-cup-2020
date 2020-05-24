@@ -1,0 +1,50 @@
+% Problem from UKIEPC 2015, J
+\problemname[stdin/stdout]{Lockdown}
+The city where Ashot lives has implemented extremely strict lockdown rules: No one is allowed to go outside for any reason.
+There are police officers at many places in the town to enforce the law.
+This is terrible news for Ashot, because he walks to his favourite park every day for inspiration to solve the latest programming problems.
+So he decided to go to the park without being seen by the police officers.
+
+Ashot has created a map of the city, which is represented by a grid with $R$ rows and $C$ columns.
+On his way to the park, Ashot can move from his current location (a cell in the grid) to a horizontally or vertically neighbouring location in one minute.
+Alternatively, Ashot can choose to stay at his current location for one minute.
+
+Ashot has discovered that there are $P$ police officers patrolling in the town.
+Each officer is assigned a fixed path of locations.
+The officer starts from the beginning of his path, and
+every minute moves on the next location on the path.
+When he reaches the last location of the path, he turns around and follows the path back.
+The officer continues his movement like this indefinitely.
+
+Some locations of the city have museums, which are closed, so neither Ashot, nor the police officers can go in them.
+A police officer can see Ashot only if they are on the same row or column and there is no museum between them.
+Help Ashot to find the least amount of time (in minutes) that he will need to reach the park without being seen by any police officer.
+
+\section*{Input}
+The first line of the input contains two space-separated integers $R$ and $C$ ($1 < R, C \leq 60$), the number of rows and columns on Ashot's grid-map of the city.
+The second line contains the locations of Ashot's home and his favourite park, separated by a space.
+Each location consists of a \texttt{(row column)} pair, written using the parentheses, as shown in the sample input.
+The numbering of rows and columns starts from $1$.
+
+$R$ lines follow, each containing exactly $C$ characters.
+The character `\texttt{.}' corresponds to a location where both Ashot and the police officers can walk, and `\texttt{\#}' corresponds to museum.
+
+The following line contains a single integer $P$ ($1 \leq P \leq 200$), the number of police officers in the town.
+Then $P$ lines follow.
+The $i$th line represents the $i$th police officer.
+It starts with an integer $k_i$ ($1 \leq k_i \leq 7$), the number of location on the $i$th officer's path.
+Then the $k_i$ locations on this officer's path follow as a space-separated list, in the same format as before.
+
+It is guaranteed that the path of each officer does not go through a museum and stays inside the city.
+It is also guaranteed that Ashot's home location and the park do not have a museum.
+
+\section*{Output}
+The only line of the output must contain the least amount of time, in minutes, that will take Ashot to reach the park from his home.
+If he cannot reach the park, simply output \texttt{-1}.
+{
+\displaysample{../problems/lockdown/tests/001}
+\emph{Note that Ashot is seen by a police officer the moment he arrives to the park on minute 26.
+This is ok, because just a brief moment in the park is enough for him to get inspired.}
+
+\displaysample{../problems/lockdown/tests/002}
+}
