@@ -43,7 +43,7 @@ int main() {
         ans[resident.i] = finish;
     }
     for (int i = 0; i < N; ++i) {
-        printf("%.2lf\n", ans[i]);
+        printf("%.5lf\n", ans[i]);
     }
     return 0;
 }

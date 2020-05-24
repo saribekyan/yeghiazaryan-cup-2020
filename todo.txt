@@ -1,5 +1,3 @@
-* Add ejudge formating bash script
-
 * Add an example of a checker
 
 * Add a local tester tool for solutions.
