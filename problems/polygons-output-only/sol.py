@@ -1,7 +1,7 @@
-start_t = 1
-end_t = 3000
+start_t = 2
+end_t = 2
 
-DEBUG = False
+DEBUG = True
 
 resf = open('result.txt', 'w')
 
@@ -42,7 +42,7 @@ def get_angle(u, a, v):
     return np.arccos(dotprod / np.sqrt(dist2(u, a) * dist2(v, a)))
 
 for test in range(start_t, end_t + 1):
-    fname = 'tests/%03d.png' % test
+    fname = 'images/%03d.png' % test
     img = cv.imread(fname, cv.IMREAD_GRAYSCALE)
 
     print("Read test %d" % test)
@@ -58,7 +58,7 @@ for test in range(start_t, end_t + 1):
                 edges = edges | e
 
     if DEBUG:
-        cv.imwrite('debug1.png', np.array(edges, dtype='uint8') * 255)
+        cv.imwrite('debug1.png', 255 - np.array(edges, dtype='uint8') * 255)
     
     found = False
     for si in range(n - 2):
@@ -74,7 +74,7 @@ for test in range(start_t, end_t + 1):
     bfs(edges, si, sj, True)
 
     if DEBUG:
-        cv.imwrite('debug2.png', np.array(edges, dtype='uint8') * 255)
+        cv.imwrite('debug2.png', 255 - np.array(edges, dtype='uint8') * 255)
 
     # find a new starting point
     found = False
@@ -96,10 +96,13 @@ for test in range(start_t, end_t + 1):
 
         a = np.zeros(edges.shape, dtype='uint8')
         for p in res:
-            a[p[0], p[1]] = 255
+            for i in range(-3,3):
+                for j in range(-3,3):
+                    a[p[0] + i, p[1] + j] = 255
+            # a[p[0], p[1]] = 255
         a[res[0][0], res[0][1]] = 100
         a[res[1][0], res[1][1]] = 170
-        cv.imwrite('debug3.png', a)
+        cv.imwrite('debug3.png', 255 - a)
 
     res = res[1:]
 

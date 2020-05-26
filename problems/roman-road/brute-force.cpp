@@ -11,7 +11,7 @@ struct Resident {
 };
 
 bool cmp_t(Resident a, Resident b) {
-    return a.t < b.t;
+    return a.t < b.t && a.t == b.t && a.i < b.i;
 }
 
 int main() {
