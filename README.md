@@ -1,4 +1,5 @@
-# yeghiazaryan-cup-2020
+# Armenian Open Programming Competition
+## In memory of Vladimir Yeghiazaryan
 
 The contest was held on May 24th, 2020.
 
