@@ -1,4 +1,3 @@
-// author: rgl
 #include <algorithm>
 #include <cstdio>
 #include <queue>

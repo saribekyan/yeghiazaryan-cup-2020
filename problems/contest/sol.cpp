@@ -1,11 +1,9 @@
-/* Sample solution for NCPC'08: Dinner
- * Author: Nils Grimsmo
- *
- * Solution: - Greedily make a local choice to fix the bug with maximal current
+/*
+ * Solution: - Greedily make a local choice to choose a task with maximal current
  *             p[i] * s[i].
  *           - DP:
- *               - Given a time left, a set of unfixed bugs, and a number of
- *                 failures on unfixed bugs, you will always do the same
+ *               - Given a time left, a set of unchosen tasks, and a number of
+ *                 failures on unchosen asks, you will always do the same
  *                 choices.
  *               - Use a bit pattern for the second.
  *               - Keep the p[i]'s updated as you recurse with failures.
@@ -22,19 +20,19 @@ const int MAX_T = 100;
 int B, T; 
 double f;
 double p[MAX_B]; // Fix probability
-int s[MAX_B];    // Bug severity
+int s[MAX_B];    // Task severity
 
 double A[MAX_T][1 << MAX_B][MAX_T];
-int N[MAX_B]; // Number of falings on fixing each bug
+int N[MAX_B]; // Number of falings on chosing each task
 
-          // Time left, bugs fixed, total fails on unfixed bugs
+          // Time left, tasks approved, total fails on unchosen tasks
 double solve(int t = 0, int b = 0, int n = 0) {
   if (t == T || b == ((1 << B) - 1)) return 0;
   if (A[t][b][n] == -1) {
     int i = -1;
     double m = -1; // Maximal expected severity fix
     for (int j = 0; j < B; ++j) 
-      if (! (b & (1 << j))) {  // Bug already fixed?
+      if (! (b & (1 << j))) {  // Task already approved?
         if (p[j] * s[j] > m) {
           m = p[j] * s[j];
           i = j;
